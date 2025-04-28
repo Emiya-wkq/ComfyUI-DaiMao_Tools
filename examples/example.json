@@ -1,0 +1,227 @@
+{
+  "id": "325f6863-d1e0-45df-ad49-2b1bad45fcb0",
+  "revision": 0,
+  "last_node_id": 21,
+  "last_link_id": 16,
+  "nodes": [
+    {
+      "id": 10,
+      "type": "呆毛文件查重",
+      "pos": [
+        1236.2071533203125,
+        618.4098510742188
+      ],
+      "size": [
+        315,
+        174
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "重复文件信息",
+          "name": "重复文件信息",
+          "type": "STRING",
+          "links": [
+            13
+          ]
+        },
+        {
+          "label": "重复文件JSON数据",
+          "name": "重复文件JSON数据",
+          "type": "STRING",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "呆毛文件查重"
+      },
+      "widgets_values": [
+        "/root/ComfyUI/models/loras",
+        "/root/ComfyUI/models",
+        "模型文件",
+        100,
+        "否"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1603.7535400390625,
+        596.899169921875
+      ],
+      "size": [
+        372.9776916503906,
+        740.3518676757812
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "label": "STRING",
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "找到以下重复文件组：\n\n组 1 (SHA256: 8f90d840e0...): 2 个文件，浪费空间: 128.39 MB\n  • /root/ComfyUI/models/loras/AnimateLCM_sd15_t2v_lora.safetensors (128.39 MB)\n  • /root/ComfyUI/models/loras/SD1.5_LCM/lcm-lora-sdv1-5.safetensors (128.39 MB)\n\n组 2 (SHA256: 146912a11f...): 2 个文件，浪费空间: 23.47 MB\n  • /root/ComfyUI/models/loras/Floweria_yiu_v10.safetensors (23.47 MB)\n  • /root/ComfyUI/models/loras/1.5lora/Floweria_yiu_v10.safetensors (23.47 MB)\n\n组 3 (SHA256: e0ab0fdf56...): 2 个文件，浪费空间: 1323.73 MB\n  • /root/ComfyUI/models/loras/Hyper-FLUX.1-dev-8steps-lora.safetensors (1323.73 MB)\n  • /root/ComfyUI/models/loras/FLUX_Hyper/Hyper-FLUX.1-dev-8steps-lora.safetensors (1323.73 MB)\n\n组 4 (SHA256: 12dffab867...): 2 个文件，浪费空间: 435.36 MB\n  • /root/ComfyUI/models/loras/NatureProduct l 自然美妆电商_v1.0a.safetensors (435.36 MB)\n  • /root/ComfyUI/models/loras/SD1.5/电商/NatureProduct l 自然美妆电商_v1.0a.safetensors (435.36 MB)\n\n组 5 (SHA256: 47aaaf0d29...): 3 个文件，浪费空间: 72.21 MB\n  • /root/ComfyUI/models/loras/add_detail.safetensors (36.11 MB)\n  • /root/ComfyUI/models/loras/SD1.5/优化/Detail Tweaker LoRA （细节调整LoRA）.safetensors (36.11 MB)\n  • /root/ComfyUI/models/loras/SD1.5/优化/add_detail.safetensors (36.11 MB)\n\n组 6 (SHA256: 81680c064e...): 2 个文件，浪费空间: 77.71 MB\n  • /root/ComfyUI/models/loras/epi_noiseoffset2.safetensors (77.71 MB)\n  • /root/ComfyUI/models/loras/SD1.5/优化/epi_noiseoffset2.safetensors (77.71 MB)\n\n组 7 (SHA256: c870395504...): 2 个文件，浪费空间: 649.68 MB\n  • /root/ComfyUI/models/loras/CADS 室内装修 Refiner XL 重绘1.5材质光影_REFINER.safetensors (649.68 MB)\n  • /root/ComfyUI/models/loras/SDXL/建筑/CADS 室内装修 Refiner XL 重绘1.5材质光影_REFINER.safetensors (649.68 MB)\n\n组 8 (SHA256: 77f7523a5e...): 2 个文件，浪费空间: 661.93 MB\n  • /root/ComfyUI/models/loras/FLUX.1-Turbo-Alpha-alimama-creative.safetensors (661.93 MB)\n  • /root/ComfyUI/models/loras/FLUX/FLUX.1-Turbo-Alpha.safetensors (661.93 MB)\n\n组 9 (SHA256: f6123d5b95...): 2 个文件，浪费空间: 256.66 MB\n  • /root/ComfyUI/models/loras/Hyper-SD15-8steps-CFG-lora.safetensors (256.66 MB)\n  • /root/ComfyUI/models/loras/SD1.5_Hyper/Hyper-SD15-8steps-CFG-lora.safetensors (256.66 MB)\n\n组 10 (SHA256: 55b51334c8...): 2 个文件，浪费空间: 750.88 MB\n  • /root/ComfyUI/models/loras/Hyper-SDXL-8steps-CFG-lora.safetensors (750.88 MB)\n  • /root/ComfyUI/models/loras/SDXL_Hyper/Hyper-SDXL-8steps-CFG-lora.safetensors (750.88 MB)\n\n组 11 (SHA256: ca689190e8...): 2 个文件，浪费空间: 750.88 MB\n  • /root/ComfyUI/models/loras/Hyper-SDXL-8steps-lora.safetensors (750.88 MB)\n  • /root/ComfyUI/models/loras/SDXL_Hyper/Hyper-SDXL-8steps-lora.safetensors (750.88 MB)\n\n组 12 (SHA256: 83ffde7ef8...): 2 个文件，浪费空间: 217.87 MB\n  • /root/ComfyUI/models/loras/Midsommar Cartoon.safetensors (217.87 MB)\n  • /root/ComfyUI/models/loras/sdxl/midsommar_cartoon_xl10.safetensors (217.87 MB)\n\n组 13 (SHA256: 927a840722...): 2 个文件，浪费空间: 162.64 MB\n  • /root/ComfyUI/models/loras/StickersRedmond.safetensors (162.64 MB)\n  • /root/ComfyUI/models/loras/贴纸/StickersRedmond.safetensors (162.64 MB)\n\n组 14 (SHA256: f24b4bb2da...): 2 个文件，浪费空间: 354.62 MB\n  • /root/ComfyUI/models/loras/ip-adapter-faceid-plusv2_sdxl_lora.safetensors (354.62 MB)\n  • /root/ComfyUI/models/loras/ipa/ip-adapter-faceid-plusv2_sdxl_lora.safetensors (354.62 MB)\n\n组 15 (SHA256: 8ac2c23fdc...): 2 个文件，浪费空间: 288.11 MB\n  • /root/ComfyUI/models/loras/1.5lora/电商/WFProduct_电商场景_v1.1.safetensors (288.11 MB)\n  • /root/ComfyUI/models/loras/SD1.5/电商/WFProduct 电商场景_v1.1.safetensors (288.11 MB)\n\n组 16 (SHA256: e526855052...): 2 个文件，浪费空间: 2175.15 MB\n  • /root/ComfyUI/models/loras/XLlora/MJ/MJ52.safetensors (2175.15 MB)\n  • /root/ComfyUI/models/loras/SD1.5/优化/MJ52.safetensors (2175.15 MB)\n\n组 17 (SHA256: fb38070dde...): 2 个文件，浪费空间: 584.47 MB\n  • /root/ComfyUI/models/loras/风格/美学艺术 _ Aesthetics art  2.0_v2.safetensors (584.47 MB)\n  • /root/ComfyUI/models/loras/FLUX/风格/美学艺术  Aesthetics art  2.0_v2.safetensors (584.47 MB)\n\n组 18 (SHA256: 8c1c096f7c...): 2 个文件，浪费空间: 8.72 MB\n  • /root/ComfyUI/models/loras/xl_sliders/age.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/age.pt (8.72 MB)\n\n组 19 (SHA256: e07c30e4f8...): 4 个文件，浪费空间: 26.17 MB\n  • /root/ComfyUI/models/loras/xl_sliders/cartoon_style.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/xl_sliders/pixar_style.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/cartoon_style.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/pixar_style.pt (8.72 MB)\n\n组 20 (SHA256: 7a70fb3418...): 2 个文件，浪费空间: 8.72 MB\n  • /root/ComfyUI/models/loras/xl_sliders/chubby.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/chubby.pt (8.72 MB)\n\n组 21 (SHA256: 9b0deeb787...): 2 个文件，浪费空间: 8.72 MB\n  • /root/ComfyUI/models/loras/xl_sliders/clay_style.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/clay_style.pt (8.72 MB)\n\n组 22 (SHA256: ee409a45bf...): 2 个文件，浪费空间: 8.72 MB\n  • /root/ComfyUI/models/loras/xl_sliders/cluttered_room.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/cluttered_room.pt (8.72 MB)\n\n组 23 (SHA256: d9b8d7d44d...): 2 个文件，浪费空间: 8.71 MB\n  • /root/ComfyUI/models/loras/xl_sliders/curlyhair.pt (8.71 MB)\n  • /root/ComfyUI/models/loras/滑块控制/curlyhair.pt (8.71 MB)\n\n组 24 (SHA256: eecd2ae8b3...): 2 个文件，浪费空间: 8.71 MB\n  • /root/ComfyUI/models/loras/xl_sliders/dark_weather.pt (8.71 MB)\n  • /root/ComfyUI/models/loras/滑块控制/dark_weather.pt (8.71 MB)\n\n组 25 (SHA256: 442770d2c3...): 2 个文件，浪费空间: 8.71 MB\n  • /root/ComfyUI/models/loras/xl_sliders/eyebrow.pt (8.71 MB)\n  • /root/ComfyUI/models/loras/滑块控制/eyebrow.pt (8.71 MB)\n\n组 26 (SHA256: 8fdffa3e77...): 2 个文件，浪费空间: 8.72 MB\n  • /root/ComfyUI/models/loras/xl_sliders/eyesize.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/eyesize.pt (8.72 MB)\n\n组 27 (SHA256: 70d6c5d5be...): 2 个文件，浪费空间: 8.71 MB\n  • /root/ComfyUI/models/loras/xl_sliders/festive.pt (8.71 MB)\n  • /root/ComfyUI/models/loras/滑块控制/festive.pt (8.71 MB)\n\n组 28 (SHA256: d98c482846...): 2 个文件，浪费空间: 8.71 MB\n  • /root/ComfyUI/models/loras/xl_sliders/fix_hands.pt (8.71 MB)\n  • /root/ComfyUI/models/loras/滑块控制/fix_hands.pt (8.71 MB)\n\n组 29 (SHA256: e93dba27fa...): 2 个文件，浪费空间: 8.72 MB\n  • /root/ComfyUI/models/loras/xl_sliders/long_hair.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/long_hair.pt (8.72 MB)\n\n组 30 (SHA256: 3b46b8eeac...): 2 个文件，浪费空间: 8.71 MB\n  • /root/ComfyUI/models/loras/xl_sliders/muscular.pt (8.71 MB)\n  • /root/ComfyUI/models/loras/滑块控制/muscular.pt (8.71 MB)\n\n组 31 (SHA256: 2d4289f4c6...): 2 个文件，浪费空间: 8.73 MB\n  • /root/ComfyUI/models/loras/xl_sliders/professional.pt (8.73 MB)\n  • /root/ComfyUI/models/loras/滑块控制/professional.pt (8.73 MB)\n\n组 32 (SHA256: e6e589e7d3...): 2 个文件，浪费空间: 8.71 MB\n  • /root/ComfyUI/models/loras/xl_sliders/repair_slider.pt (8.71 MB)\n  • /root/ComfyUI/models/loras/滑块控制/repair_slider.pt (8.71 MB)\n\n组 33 (SHA256: 2779746c08...): 2 个文件，浪费空间: 8.72 MB\n  • /root/ComfyUI/models/loras/xl_sliders/sculpture_style.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/sculpture_style.pt (8.72 MB)\n\n组 34 (SHA256: 6430ab4739...): 2 个文件，浪费空间: 8.72 MB\n  • /root/ComfyUI/models/loras/xl_sliders/smiling.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/smiling.pt (8.72 MB)\n\n组 35 (SHA256: dca6cda802...): 2 个文件，浪费空间: 8.72 MB\n  • /root/ComfyUI/models/loras/xl_sliders/stylegan_latent1.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/stylegan_latent1.pt (8.72 MB)\n\n组 36 (SHA256: 4bbe239c39...): 2 个文件，浪费空间: 8.72 MB\n  • /root/ComfyUI/models/loras/xl_sliders/stylegan_latent2.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/stylegan_latent2.pt (8.72 MB)\n\n组 37 (SHA256: 36806271ca...): 2 个文件，浪费空间: 8.72 MB\n  • /root/ComfyUI/models/loras/xl_sliders/suprised_look.pt (8.72 MB)\n  • /root/ComfyUI/models/loras/滑块控制/suprised_look.pt (8.72 MB)\n\n组 38 (SHA256: 215e5445bb...): 2 个文件，浪费空间: 8.71 MB\n  • /root/ComfyUI/models/loras/xl_sliders/tropical_weather.pt (8.71 MB)\n  • /root/ComfyUI/models/loras/滑块控制/tropical_weather.pt (8.71 MB)\n\n组 39 (SHA256: 38f0bc81bc...): 2 个文件，浪费空间: 8.71 MB\n  • /root/ComfyUI/models/loras/xl_sliders/winter_weather.pt (8.71 MB)\n  • /root/ComfyUI/models/loras/滑块控制/winter_weather.pt (8.71 MB)\n\n总计找到 39 组重复文件，共 81 个文件。\n浪费的存储空间：9122.98 MB (8.91 GB)"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2430.521728515625,
+        583.596923828125
+      ],
+      "size": [
+        365.7156982421875,
+        357.2223205566406
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "label": "STRING",
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "文件去重模拟执行结果：\n\n处理组 1 (SHA256: 8f90d840e0...):\n  • 保留: /root/ComfyUI/models/loras/AnimateLCM_sd15_t2v_lora.safetensors (128.39 MB)\n  • 将删除: /root/ComfyUI/models/loras/SD1.5_LCM/lcm-lora-sdv1-5.safetensors (128.39 MB)\n\n处理组 2 (SHA256: 146912a11f...):\n  • 保留: /root/ComfyUI/models/loras/Floweria_yiu_v10.safetensors (23.47 MB)\n  • 将删除: /root/ComfyUI/models/loras/1.5lora/Floweria_yiu_v10.safetensors (23.47 MB)\n\n处理组 3 (SHA256: e0ab0fdf56...):\n  • 保留: /root/ComfyUI/models/loras/Hyper-FLUX.1-dev-8steps-lora.safetensors (1323.73 MB)\n  • 将删除: /root/ComfyUI/models/loras/FLUX_Hyper/Hyper-FLUX.1-dev-8steps-lora.safetensors (1323.73 MB)\n\n处理组 4 (SHA256: 12dffab867...):\n  • 保留: /root/ComfyUI/models/loras/NatureProduct l 自然美妆电商_v1.0a.safetensors (435.36 MB)\n  • 将删除: /root/ComfyUI/models/loras/SD1.5/电商/NatureProduct l 自然美妆电商_v1.0a.safetensors (435.36 MB)\n\n处理组 5 (SHA256: 47aaaf0d29...):\n  • 保留: /root/ComfyUI/models/loras/add_detail.safetensors (36.11 MB)\n  • 将删除: /root/ComfyUI/models/loras/SD1.5/优化/Detail Tweaker LoRA （细节调整LoRA）.safetensors (36.11 MB)\n  • 将删除: /root/ComfyUI/models/loras/SD1.5/优化/add_detail.safetensors (36.11 MB)\n\n处理组 6 (SHA256: 81680c064e...):\n  • 保留: /root/ComfyUI/models/loras/epi_noiseoffset2.safetensors (77.71 MB)\n  • 将删除: /root/ComfyUI/models/loras/SD1.5/优化/epi_noiseoffset2.safetensors (77.71 MB)\n\n处理组 7 (SHA256: c870395504...):\n  • 保留: /root/ComfyUI/models/loras/CADS 室内装修 Refiner XL 重绘1.5材质光影_REFINER.safetensors (649.68 MB)\n  • 将删除: /root/ComfyUI/models/loras/SDXL/建筑/CADS 室内装修 Refiner XL 重绘1.5材质光影_REFINER.safetensors (649.68 MB)\n\n处理组 8 (SHA256: 77f7523a5e...):\n  • 保留: /root/ComfyUI/models/loras/FLUX.1-Turbo-Alpha-alimama-creative.safetensors (661.93 MB)\n  • 将删除: /root/ComfyUI/models/loras/FLUX/FLUX.1-Turbo-Alpha.safetensors (661.93 MB)\n\n处理组 9 (SHA256: f6123d5b95...):\n  • 保留: /root/ComfyUI/models/loras/Hyper-SD15-8steps-CFG-lora.safetensors (256.66 MB)\n  • 将删除: /root/ComfyUI/models/loras/SD1.5_Hyper/Hyper-SD15-8steps-CFG-lora.safetensors (256.66 MB)\n\n处理组 10 (SHA256: 55b51334c8...):\n  • 保留: /root/ComfyUI/models/loras/Hyper-SDXL-8steps-CFG-lora.safetensors (750.88 MB)\n  • 将删除: /root/ComfyUI/models/loras/SDXL_Hyper/Hyper-SDXL-8steps-CFG-lora.safetensors (750.88 MB)\n\n处理组 11 (SHA256: ca689190e8...):\n  • 保留: /root/ComfyUI/models/loras/Hyper-SDXL-8steps-lora.safetensors (750.88 MB)\n  • 将删除: /root/ComfyUI/models/loras/SDXL_Hyper/Hyper-SDXL-8steps-lora.safetensors (750.88 MB)\n\n处理组 12 (SHA256: 83ffde7ef8...):\n  • 保留: /root/ComfyUI/models/loras/Midsommar Cartoon.safetensors (217.87 MB)\n  • 将删除: /root/ComfyUI/models/loras/sdxl/midsommar_cartoon_xl10.safetensors (217.87 MB)\n\n处理组 13 (SHA256: 927a840722...):\n  • 保留: /root/ComfyUI/models/loras/StickersRedmond.safetensors (162.64 MB)\n  • 将删除: /root/ComfyUI/models/loras/贴纸/StickersRedmond.safetensors (162.64 MB)\n\n处理组 14 (SHA256: f24b4bb2da...):\n  • 保留: /root/ComfyUI/models/loras/ip-adapter-faceid-plusv2_sdxl_lora.safetensors (354.62 MB)\n  • 将删除: /root/ComfyUI/models/loras/ipa/ip-adapter-faceid-plusv2_sdxl_lora.safetensors (354.62 MB)\n\n处理组 15 (SHA256: 8ac2c23fdc...):\n  • 保留: /root/ComfyUI/models/loras/1.5lora/电商/WFProduct_电商场景_v1.1.safetensors (288.11 MB)\n  • 将删除: /root/ComfyUI/models/loras/SD1.5/电商/WFProduct 电商场景_v1.1.safetensors (288.11 MB)\n\n处理组 16 (SHA256: e526855052...):\n  • 保留: /root/ComfyUI/models/loras/XLlora/MJ/MJ52.safetensors (2175.15 MB)\n  • 将删除: /root/ComfyUI/models/loras/SD1.5/优化/MJ52.safetensors (2175.15 MB)\n\n处理组 17 (SHA256: fb38070dde...):\n  • 保留: /root/ComfyUI/models/loras/风格/美学艺术 _ Aesthetics art  2.0_v2.safetensors (584.47 MB)\n  • 将删除: /root/ComfyUI/models/loras/FLUX/风格/美学艺术  Aesthetics art  2.0_v2.safetensors (584.47 MB)\n\n处理组 18 (SHA256: 8c1c096f7c...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/age.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/age.pt (8.72 MB)\n\n处理组 19 (SHA256: e07c30e4f8...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/cartoon_style.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/xl_sliders/pixar_style.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/cartoon_style.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/pixar_style.pt (8.72 MB)\n\n处理组 20 (SHA256: 7a70fb3418...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/chubby.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/chubby.pt (8.72 MB)\n\n处理组 21 (SHA256: 9b0deeb787...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/clay_style.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/clay_style.pt (8.72 MB)\n\n处理组 22 (SHA256: ee409a45bf...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/cluttered_room.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/cluttered_room.pt (8.72 MB)\n\n处理组 23 (SHA256: d9b8d7d44d...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/curlyhair.pt (8.71 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/curlyhair.pt (8.71 MB)\n\n处理组 24 (SHA256: eecd2ae8b3...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/dark_weather.pt (8.71 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/dark_weather.pt (8.71 MB)\n\n处理组 25 (SHA256: 442770d2c3...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/eyebrow.pt (8.71 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/eyebrow.pt (8.71 MB)\n\n处理组 26 (SHA256: 8fdffa3e77...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/eyesize.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/eyesize.pt (8.72 MB)\n\n处理组 27 (SHA256: 70d6c5d5be...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/festive.pt (8.71 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/festive.pt (8.71 MB)\n\n处理组 28 (SHA256: d98c482846...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/fix_hands.pt (8.71 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/fix_hands.pt (8.71 MB)\n\n处理组 29 (SHA256: e93dba27fa...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/long_hair.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/long_hair.pt (8.72 MB)\n\n处理组 30 (SHA256: 3b46b8eeac...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/muscular.pt (8.71 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/muscular.pt (8.71 MB)\n\n处理组 31 (SHA256: 2d4289f4c6...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/professional.pt (8.73 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/professional.pt (8.73 MB)\n\n处理组 32 (SHA256: e6e589e7d3...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/repair_slider.pt (8.71 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/repair_slider.pt (8.71 MB)\n\n处理组 33 (SHA256: 2779746c08...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/sculpture_style.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/sculpture_style.pt (8.72 MB)\n\n处理组 34 (SHA256: 6430ab4739...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/smiling.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/smiling.pt (8.72 MB)\n\n处理组 35 (SHA256: dca6cda802...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/stylegan_latent1.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/stylegan_latent1.pt (8.72 MB)\n\n处理组 36 (SHA256: 4bbe239c39...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/stylegan_latent2.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/stylegan_latent2.pt (8.72 MB)\n\n处理组 37 (SHA256: 36806271ca...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/suprised_look.pt (8.72 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/suprised_look.pt (8.72 MB)\n\n处理组 38 (SHA256: 215e5445bb...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/tropical_weather.pt (8.71 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/tropical_weather.pt (8.71 MB)\n\n处理组 39 (SHA256: 38f0bc81bc...):\n  • 保留: /root/ComfyUI/models/loras/xl_sliders/winter_weather.pt (8.71 MB)\n  • 将删除: /root/ComfyUI/models/loras/滑块控制/winter_weather.pt (8.71 MB)\n\n模拟删除完成，将删除 39 组中的 42 个文件，预计释放空间: 9122.98 MB (8.91 GB)\n注意：这只是模拟结果，没有实际删除文件。要执行实际删除，请将'dry_run'设置为'否'。"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "FileDeduplicator",
+      "pos": [
+        1998.92626953125,
+        608.324462890625
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "duplicate_data",
+          "type": "STRING",
+          "widget": {
+            "name": "duplicate_data"
+          },
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "label": "删除结果",
+          "name": "删除结果",
+          "type": "STRING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FileDeduplicator"
+      },
+      "widgets_values": [
+        "",
+        "保留第一个文件",
+        "是",
+        true
+      ]
+    }
+  ],
+  "links": [
+    [
+      13,
+      10,
+      0,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      15,
+      10,
+      1,
+      20,
+      0,
+      "STRING"
+    ],
+    [
+      16,
+      20,
+      0,
+      16,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9646149645000018,
+      "offset": [
+        -1027.3322240012678,
+        -208.29106502978829
+      ]
+    },
+    "ue_links": []
+  },
+  "version": 0.4
+}
