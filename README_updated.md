@@ -65,7 +65,7 @@
 1. 将此仓库克隆到ComfyUI的`custom_nodes`目录：
    ```
    cd ComfyUI/custom_nodes
-   git clone https://github.com/yourusername/ComfyUI-DaiMao_Tools.git
+   git clone https://github.com/Emiya-wkq/ComfyUI-DaiMao_Tools.git
    ```
 
 2. 重启ComfyUI
