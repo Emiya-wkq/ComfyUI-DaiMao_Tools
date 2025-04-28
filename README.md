@@ -3,6 +3,7 @@
 一个为ComfyUI提供实用工具的自定义节点集合。
 
 ## 功能节点
+![image](https://github.com/user-attachments/assets/f1f11618-5f12-4226-a4be-139ec250a414)
 
 ### 呆毛文件查重
 
