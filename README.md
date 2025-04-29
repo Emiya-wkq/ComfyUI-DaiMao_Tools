@@ -1,8 +1,9 @@
 # ComfyUI-DaiMao_Tools (呆毛工具)
 
 一个为ComfyUI提供实用工具的自定义节点集合。
-
+[视频讲解](https://www.bilibili.com/video/BV1mMLUzKENN/?vd_source=65ad90b27a23c55bef8dcab54513d7e1)
 ## 功能节点
+![image](https://github.com/user-attachments/assets/f1f11618-5f12-4226-a4be-139ec250a414)
 
 ### 呆毛文件查重
 
@@ -57,7 +58,7 @@
 1. 将此仓库克隆到ComfyUI的`custom_nodes`目录：
    ```
    cd ComfyUI/custom_nodes
-   git clone https://github.com/yourusername/ComfyUI-DaiMao_Tools.git
+   git clone https://github.com/Emiya-wkq/ComfyUI-DaiMao_Tools.git
    ```
 
 2. 重启ComfyUI
