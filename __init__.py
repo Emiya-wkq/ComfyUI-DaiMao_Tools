@@ -4,18 +4,25 @@ from .daimao_file_deduplicator import NODE_CLASS_MAPPINGS as DEDUPLICATOR_NODE_M
 from .daimao_file_deduplicator import NODE_DISPLAY_NAME_MAPPINGS as DEDUPLICATOR_DISPLAY_MAPPINGS
 from .daimao_file_dedup import NODE_CLASS_MAPPINGS as DEDUP_NODE_MAPPINGS
 from .daimao_file_dedup import NODE_DISPLAY_NAME_MAPPINGS as DEDUP_DISPLAY_MAPPINGS
+from .daimao_file_deduplicator_with_symlink import DaiMaoFileDeduplicatorWithSymlink
 
 # 合并节点映射
 NODE_CLASS_MAPPINGS = {}
 NODE_CLASS_MAPPINGS.update(FINDER_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(DEDUPLICATOR_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(DEDUP_NODE_MAPPINGS)
+NODE_CLASS_MAPPINGS.update({
+    "呆毛文件去重器(带符号链接)": DaiMaoFileDeduplicatorWithSymlink
+})
 
 # 合并显示名称映射
 NODE_DISPLAY_NAME_MAPPINGS = {}
 NODE_DISPLAY_NAME_MAPPINGS.update(FINDER_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(DEDUPLICATOR_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(DEDUP_DISPLAY_MAPPINGS)
+NODE_DISPLAY_NAME_MAPPINGS.update({
+    "呆毛文件去重器(带符号链接)": "呆毛文件去重器(带符号链接)"
+})
 
 # 添加便于搜索的别名
 NODE_CLASS_MAPPINGS.update({
@@ -34,6 +41,11 @@ NODE_CLASS_MAPPINGS.update({
     "FileDeduplicator": NODE_CLASS_MAPPINGS["呆毛文件去重器"],
     "RemoveDuplicates": NODE_CLASS_MAPPINGS["呆毛文件去重器"],
     "删除重复文件": NODE_CLASS_MAPPINGS["呆毛文件去重器"],
+    
+    "DaiMaoDeduplicatorWithSymlink": NODE_CLASS_MAPPINGS["呆毛文件去重器(带符号链接)"],
+    "FileDeduplicatorWithSymlink": NODE_CLASS_MAPPINGS["呆毛文件去重器(带符号链接)"],
+    "RemoveDuplicatesWithSymlink": NODE_CLASS_MAPPINGS["呆毛文件去重器(带符号链接)"],
+    "删除重复文件(带符号链接)": NODE_CLASS_MAPPINGS["呆毛文件去重器(带符号链接)"]
 })
 
 # 同步更新显示名称
@@ -43,6 +55,8 @@ for key in NODE_CLASS_MAPPINGS:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件查重"
         elif key in ["DaiMaoDeduplicator", "FileDeduplicator", "RemoveDuplicates", "删除重复文件"]:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件去重器"
+        elif key in ["DaiMaoDeduplicatorWithSymlink", "FileDeduplicatorWithSymlink", "RemoveDuplicatesWithSymlink", "删除重复文件(带符号链接)"]:
+            NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件去重器(带符号链接)"
         else:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件去重"
 
