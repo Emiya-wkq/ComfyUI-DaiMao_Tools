@@ -23,7 +23,7 @@ NODE_DISPLAY_NAME_MAPPINGS.update(FINDER_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(DEDUPLICATOR_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(DEDUP_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update({
-    "anime_name_helper": "动漫人物名称辅助器",
+    "anime_name_helper": "呆毛动漫人物名称辅助器",
     "呆毛文件去重器(带符号链接)": "呆毛文件去重器(带符号链接)",
 })
 
