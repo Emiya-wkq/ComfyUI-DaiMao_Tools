@@ -5,6 +5,7 @@ from .daimao_file_deduplicator import NODE_DISPLAY_NAME_MAPPINGS as DEDUPLICATOR
 from .daimao_file_dedup import NODE_CLASS_MAPPINGS as DEDUP_NODE_MAPPINGS
 from .daimao_file_dedup import NODE_DISPLAY_NAME_MAPPINGS as DEDUP_DISPLAY_MAPPINGS
 from .daimao_file_deduplicator_with_symlink import DaiMaoFileDeduplicatorWithSymlink
+from .anime_name_helper.anime_name_helper_node import AnimeNameHelper
 
 # 合并节点映射
 NODE_CLASS_MAPPINGS = {}
@@ -12,7 +13,8 @@ NODE_CLASS_MAPPINGS.update(FINDER_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(DEDUPLICATOR_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(DEDUP_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update({
-    "呆毛文件去重器(带符号链接)": DaiMaoFileDeduplicatorWithSymlink
+    "anime_name_helper": AnimeNameHelper,
+    "呆毛文件去重器(带符号链接)": DaiMaoFileDeduplicatorWithSymlink,
 })
 
 # 合并显示名称映射
@@ -21,7 +23,8 @@ NODE_DISPLAY_NAME_MAPPINGS.update(FINDER_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(DEDUPLICATOR_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(DEDUP_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update({
-    "呆毛文件去重器(带符号链接)": "呆毛文件去重器(带符号链接)"
+    "anime_name_helper": "呆毛动漫人物名称辅助器",
+    "呆毛文件去重器(带符号链接)": "呆毛文件去重器(带符号链接)",
 })
 
 # 添加便于搜索的别名
@@ -59,5 +62,7 @@ for key in NODE_CLASS_MAPPINGS:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件去重器(带符号链接)"
         else:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件去重"
+
+WEB_DIRECTORY = "./web"
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS'] 

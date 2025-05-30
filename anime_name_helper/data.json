@@ -1,0 +1,606 @@
+[
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "阿尔托莉雅·潘德拉贡",
+    "character_english_name": "Artoria Pendragon",
+    "gender": "女",
+    "role": "Saber",
+    "description": "不列颠传说中的骑士王，Fate系列标志性角色，长期占据人气榜首[1,3,12](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "吉尔伽美什",
+    "character_english_name": "Gilgamesh",
+    "gender": "男",
+    "role": "Archer",
+    "description": "最古英雄王，拥有『王之财宝』，实力与话题性兼具的顶级人气角色[1,5,12](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "贞德",
+    "character_english_name": "Jeanne d'Arc",
+    "gender": "女",
+    "role": "Ruler",
+    "description": "法国圣女，FGO剧情核心人物，衍生形态黑贞德人气同样极高[3,12](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "卫宫士郎",
+    "character_english_name": "Shirou Emiya",
+    "gender": "男",
+    "role": "Master/Archer",
+    "description": "系列男主角，正义的理想主义者，英灵卫宫形态人气突出[1,6](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "远坂凛",
+    "character_english_name": "Rin Tohsaka",
+    "gender": "女",
+    "role": "Master",
+    "description": "天才魔术师，双马尾傲娇标杆角色，UBW线女主角[6,8](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "伊斯坎达尔",
+    "character_english_name": "Iskandar",
+    "gender": "男",
+    "role": "Rider",
+    "description": "征服王，Fate/Zero最具人格魅力的从者之一[1,9](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "玛修·基列莱特",
+    "character_english_name": "Mash Kyrielight",
+    "gender": "女",
+    "role": "Shielder",
+    "description": "FGO原创女主角，盾娘形象深入人心[3,12](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "库·丘林",
+    "character_english_name": "Cu Chulainn",
+    "gender": "男",
+    "role": "Lancer",
+    "description": "凯尔特英雄，『死棘之枪』持有者，战斗风格极具魅力[1,3](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "间桐樱",
+    "character_english_name": "Sakura Matou",
+    "gender": "女",
+    "role": "Master",
+    "description": "HF线女主角，黑化形态与剧情深度提升人气[6,7](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "尼禄·克劳狄乌斯",
+    "character_english_name": "Nero Claudius",
+    "gender": "女",
+    "role": "Saber",
+    "description": "罗马暴君，EXTRA系列高人气角色，与阿尔托莉雅并称红蓝Saber[1,3](@ref)"
+  },
+
+  {
+    "anime_chinese_name": "无职转生",
+    "anime_english_name": "Mushoku Tensei",
+    "character_chinese_name": "洛琪希",
+    "character_english_name": "Roxy Migurdia",
+    "gender": "女",
+    "role": "魔法教师"
+  },
+  {
+    "anime_chinese_name": "无职转生",
+    "anime_english_name": "Mushoku Tensei",
+    "character_chinese_name": "艾莉丝",
+    "character_english_name": "Eris Boreas",
+    "gender": "女",
+    "role": "剑士"
+  },
+  {
+    "anime_chinese_name": "无职转生",
+    "anime_english_name": "Mushoku Tensei",
+    "character_chinese_name": "希露菲叶特",
+    "character_english_name": "Sylphiette",
+    "gender": "女",
+    "role": "治愈术师"
+  },
+  {
+    "anime_chinese_name": "无职转生",
+    "anime_english_name": "Mushoku Tensei",
+    "character_chinese_name": "鲁迪乌斯",
+    "character_english_name": "Rudeus Greyrat",
+    "gender": "男",
+    "role": "主角"
+  },
+  {
+    "anime_chinese_name": "无职转生",
+    "anime_english_name": "Mushoku Tensei",
+    "character_chinese_name": "基列奴",
+    "character_english_name": "Ghislaine Dedoldia",
+    "gender": "女",
+    "role": "剑王"
+  },
+  {
+    "anime_chinese_name": "无职转生",
+    "anime_english_name": "Mushoku Tensei",
+    "character_chinese_name": "艾莉娜丽洁",
+    "character_english_name": "Elinalise Dragonroad",
+    "gender": "女",
+    "role": "长耳族战士"
+  },
+  {
+    "anime_chinese_name": "鬼灭之刃",
+    "anime_english_name": "Demon Slayer",
+    "character_chinese_name": "灶门炭治郎",
+    "character_english_name": "Tanjirou Kamado",
+    "gender": "男",
+    "role": "主角"
+  },
+  {
+    "anime_chinese_name": "鬼灭之刃",
+    "anime_english_name": "Demon Slayer",
+    "character_chinese_name": "灶门祢豆子",
+    "character_english_name": "Nezuko Kamado",
+    "gender": "女",
+    "role": "主角"
+  },
+  {
+    "anime_chinese_name": "鬼灭之刃",
+    "anime_english_name": "Demon Slayer",
+    "character_chinese_name": "我妻善逸",
+    "character_english_name": "Zenitsu Agatsuma",
+    "gender": "男",
+    "role": "主角"
+  },
+  {
+    "anime_chinese_name": "鬼灭之刃",
+    "anime_english_name": "Demon Slayer",
+    "character_chinese_name": "嘴平伊之助",
+    "character_english_name": "Inosuke Hashibira",
+    "gender": "男",
+    "role": "主角"
+  },
+  {
+    "anime_chinese_name": "鬼灭之刃",
+    "anime_english_name": "Demon Slayer",
+    "character_chinese_name": "富冈义勇",
+    "character_english_name": "Giyuu Tomioka",
+    "gender": "男",
+    "role": "水柱"
+  },
+  {
+    "anime_chinese_name": "鬼灭之刃",
+    "anime_english_name": "Demon Slayer",
+    "character_chinese_name": "蝴蝶忍",
+    "character_english_name": "Shinobu Kochou",
+    "gender": "女",
+    "role": "虫柱"
+  },
+  {
+    "anime_chinese_name": "鬼灭之刃",
+    "anime_english_name": "Demon Slayer",
+    "character_chinese_name": "炼狱杏寿郎",
+    "character_english_name": "Kyojuro Rengoku",
+    "gender": "男",
+    "role": "炎柱"
+  },
+  {
+    "anime_chinese_name": "鬼灭之刃",
+    "anime_english_name": "Demon Slayer",
+    "character_chinese_name": "宇髄天元",
+    "character_english_name": "Tengen Uzui",
+    "gender": "男",
+    "role": "音柱"
+  },
+  {
+    "anime_chinese_name": "鬼灭之刃",
+    "anime_english_name": "Demon Slayer",
+    "character_chinese_name": "甘露寺蜜璃",
+    "character_english_name": "Mitsuri Kanroji",
+    "gender": "女",
+    "role": "恋柱"
+  },
+  {
+    "anime_chinese_name": "咒术回战",
+    "anime_english_name": "Jujutsu Kaisen",
+    "character_chinese_name": "虎杖悠仁",
+    "character_english_name": "Yuji Itadori",
+    "gender": "男",
+    "role": "主角"
+  },
+  {
+    "anime_chinese_name": "咒术回战",
+    "anime_english_name": "Jujutsu Kaisen",
+    "character_chinese_name": "伏黑惠",
+    "character_english_name": "Megumi Fushiguro",
+    "gender": "男",
+    "role": "主角"
+  },
+  {
+    "anime_chinese_name": "咒术回战",
+    "anime_english_name": "Jujutsu Kaisen",
+    "character_chinese_name": "钉崎野蔷薇",
+    "character_english_name": "Nobara Kugisaki",
+    "gender": "女",
+    "role": "主角"
+  },
+  {
+    "anime_chinese_name": "咒术回战",
+    "anime_english_name": "Jujutsu Kaisen",
+    "character_chinese_name": "五条悟",
+    "character_english_name": "Satoru Gojo",
+    "gender": "男",
+    "role": "特级咒术师"
+  },
+  {
+    "anime_chinese_name": "咒术回战",
+    "anime_english_name": "Jujutsu Kaisen",
+    "character_chinese_name": "禅院真希",
+    "character_english_name": "Maki Zenin",
+    "gender": "女",
+    "role": "咒具使"
+  },
+  {
+    "anime_chinese_name": "咒术回战",
+    "anime_english_name": "Jujutsu Kaisen",
+    "character_chinese_name": "熊猫",
+    "character_english_name": "Panda",
+    "gender": "男",
+    "role": "咒骸"
+  },
+  {
+    "anime_chinese_name": "咒术回战",
+    "anime_english_name": "Jujutsu Kaisen",
+    "character_chinese_name": "夏油杰",
+    "character_english_name": "Suguru Geto",
+    "gender": "男",
+    "role": "诅咒师"
+  },
+  {
+    "anime_chinese_name": "咒术回战",
+    "anime_english_name": "Jujutsu Kaisen",
+    "character_chinese_name": "两面宿傩",
+    "character_english_name": "Ryomen Sukuna",
+    "gender": "男",
+    "role": "诅咒之王"
+  },
+  {
+    "anime_chinese_name": "咒术回战",
+    "anime_english_name": "Jujutsu Kaisen",
+    "character_chinese_name": "七海建人",
+    "character_english_name": "Kento Nanami",
+    "gender": "男",
+    "role": "一级咒术师"
+  },
+  {
+    "anime_chinese_name": "咒术回战",
+    "anime_english_name": "Jujutsu Kaisen",
+    "character_chinese_name": "家入硝子",
+    "character_english_name": "Shoko Ieiri",
+    "gender": "女",
+    "role": "校医"
+  },
+  {
+    "anime_chinese_name": "进击的巨人",
+    "anime_english_name": "Attack on Titan",
+    "character_chinese_name": "艾伦·耶格尔",
+    "character_english_name": "Eren Yeager",
+    "gender": "男",
+    "role": "主角/进击的巨人宿主"
+  },
+  {
+    "anime_chinese_name": "进击的巨人",
+    "anime_english_name": "Attack on Titan",
+    "character_chinese_name": "三笠·阿克曼",
+    "character_english_name": "Mikasa Ackerman",
+    "gender": "女",
+    "role": "主角/最强人类士兵"
+  },
+  {
+    "anime_chinese_name": "进击的巨人",
+    "anime_english_name": "Attack on Titan",
+    "character_chinese_name": "阿明·阿诺德",
+    "character_english_name": "Armin Arlert",
+    "gender": "男",
+    "role": "主角/超大型巨人宿主"
+  },
+  {
+    "anime_chinese_name": "进击的巨人",
+    "anime_english_name": "Attack on Titan",
+    "character_chinese_name": "利威尔·阿克曼",
+    "character_english_name": "Levi Ackerman",
+    "gender": "男",
+    "role": "调查兵团兵长"
+  },
+  {
+    "anime_chinese_name": "进击的巨人",
+    "anime_english_name": "Attack on Titan",
+    "character_chinese_name": "韩吉·佐耶",
+    "character_english_name": "Hange Zoe",
+    "gender": "女",
+    "role": "调查兵团团长"
+  },
+  {
+    "anime_chinese_name": "进击的巨人",
+    "anime_english_name": "Attack on Titan",
+    "character_chinese_name": "莱纳·布朗",
+    "character_english_name": "Reiner Braun",
+    "gender": "男",
+    "role": "铠之巨人宿主"
+  },
+  {
+    "anime_chinese_name": "进击的巨人",
+    "anime_english_name": "Attack on Titan",
+    "character_chinese_name": "吉克·耶格尔",
+    "character_english_name": "Zeke Yeager",
+    "gender": "男",
+    "role": "兽之巨人宿主"
+  },
+  {
+    "anime_chinese_name": "进击的巨人",
+    "anime_english_name": "Attack on Titan",
+    "character_chinese_name": "赫里斯塔·兰斯",
+    "character_english_name": "Historia Reiss",
+    "gender": "女",
+    "role": "墙内女王"
+  },
+  {
+    "anime_chinese_name": "进击的巨人",
+    "anime_english_name": "Attack on Titan",
+    "character_chinese_name": "埃尔文·史密斯",
+    "character_english_name": "Erwin Smith",
+    "gender": "男",
+    "role": "调查兵团前团长"
+  },
+  {
+    "anime_chinese_name": "进击的巨人",
+    "anime_english_name": "Attack on Titan",
+    "character_chinese_name": "阿尼·利昂纳德",
+    "character_english_name": "Annie Leonhart",
+    "gender": "女",
+    "role": "女型巨人宿主"
+  },
+  {
+    "anime_chinese_name": "间谍过家家",
+    "anime_english_name": "SPY×FAMILY",
+    "character_chinese_name": "洛伊德·佛杰",
+    "character_english_name": "Loid Forger",
+    "gender": "男",
+    "role": "西国间谍/代号「黄昏」"
+  },
+  {
+    "anime_chinese_name": "间谍过家家",
+    "anime_english_name": "SPY×FAMILY",
+    "character_chinese_name": "约尔·佛杰",
+    "character_english_name": "Yor Forger",
+    "gender": "女",
+    "role": "杀手/代号「睡美人」"
+  },
+  {
+    "anime_chinese_name": "间谍过家家",
+    "anime_english_name": "SPY×FAMILY",
+    "character_chinese_name": "阿妮亚·佛杰",
+    "character_english_name": "Anya Forger",
+    "gender": "女",
+    "role": "读心能力者/实验体007"
+  },
+  {
+    "anime_chinese_name": "间谍过家家",
+    "anime_english_name": "SPY×FAMILY",
+    "character_chinese_name": "邦德·佛杰",
+    "character_english_name": "Bond Forger",
+    "gender": "男",
+    "role": "预知未来的狗狗"
+  },
+  {
+    "anime_chinese_name": "间谍过家家",
+    "anime_english_name": "SPY×FAMILY",
+    "character_chinese_name": "达米安·德斯蒙",
+    "character_english_name": "Damian Desmond",
+    "gender": "男",
+    "role": "阿尼亚的同学/目标人物之子"
+  },
+  {
+    "anime_chinese_name": "间谍过家家",
+    "anime_english_name": "SPY×FAMILY",
+    "character_chinese_name": "尤里·布莱尔",
+    "character_english_name": "Yuri Briar",
+    "gender": "男",
+    "role": "约尔的弟弟/秘密警察"
+  },
+  {
+    "anime_chinese_name": "间谍过家家",
+    "anime_english_name": "SPY×FAMILY",
+    "character_chinese_name": "菲奥娜·弗洛斯特",
+    "character_english_name": "Fiona Frost",
+    "gender": "女",
+    "role": "间谍/代号「夜帷」"
+  },
+  {
+    "anime_chinese_name": "间谍过家家",
+    "anime_english_name": "SPY×FAMILY",
+    "character_chinese_name": "弗兰基·富兰克林",
+    "character_english_name": "Franky Franklin",
+    "gender": "男",
+    "role": "情报支援人员"
+  },
+  {
+    "anime_chinese_name": "间谍过家家",
+    "anime_english_name": "SPY×FAMILY",
+    "character_chinese_name": "亨利·亨德森",
+    "character_english_name": "Henry Henderson",
+    "gender": "男",
+    "role": "伊甸学园舍监"
+  },
+  {
+    "anime_chinese_name": "间谍过家家",
+    "anime_english_name": "SPY×FAMILY",
+    "character_chinese_name": "贝姬·布莱克贝尔",
+    "character_english_name": "Becky Blackbell",
+    "gender": "女",
+    "role": "阿尼亚的同学/军火商之女"
+  },
+  {
+    "anime_chinese_name": "魔法少女小圆",
+    "anime_english_name": "Puella Magi Madoka Magica",
+    "character_chinese_name": "鹿目圆",
+    "character_english_name": "Madoka Kaname",
+    "gender": "女",
+    "role": "主角/圆环之理"
+  },
+  {
+    "anime_chinese_name": "魔法少女小圆",
+    "anime_english_name": "Puella Magi Madoka Magica",
+    "character_chinese_name": "晓美焰",
+    "character_english_name": "Homura Akemi",
+    "gender": "女",
+    "role": "时间操控者/恶魔"
+  },
+  {
+    "anime_chinese_name": "魔法少女小圆",
+    "anime_english_name": "Puella Magi Madoka Magica",
+    "character_chinese_name": "美树沙耶香",
+    "character_english_name": "Sayaka Miki",
+    "gender": "女",
+    "role": "魔法少女/人鱼魔女"
+  },
+  {
+    "anime_chinese_name": "魔法少女小圆",
+    "anime_english_name": "Puella Magi Madoka Magica",
+    "character_chinese_name": "巴麻美",
+    "character_english_name": "Mami Tomoe",
+    "gender": "女",
+    "role": "魔法少女/枪械使"
+  },
+  {
+    "anime_chinese_name": "魔法少女小圆",
+    "anime_english_name": "Puella Magi Madoka Magica",
+    "character_chinese_name": "佐仓杏子",
+    "character_english_name": "Kyoko Sakura",
+    "gender": "女",
+    "role": "魔法少女/长枪使"
+  },
+  {
+    "anime_chinese_name": "魔法少女小圆",
+    "anime_english_name": "Puella Magi Madoka Magica",
+    "character_chinese_name": "丘比",
+    "character_english_name": "Kyubey",
+    "gender": "无性别",
+    "role": "契约者/孵化者"
+  },
+  {
+    "anime_chinese_name": "魔法少女小圆",
+    "anime_english_name": "Puella Magi Madoka Magica",
+    "character_chinese_name": "百江渚",
+    "character_english_name": "Nagisa Momoe",
+    "gender": "女",
+    "role": "魔法少女/零食魔女"
+  },
+  {
+    "anime_chinese_name": "魔法少女小圆",
+    "anime_english_name": "Puella Magi Madoka Magica",
+    "character_chinese_name": "鹿目询子",
+    "character_english_name": "Junko Kaname",
+    "gender": "女",
+    "role": "小圆的母亲"
+  },
+  {
+    "anime_chinese_name": "魔法少女小圆",
+    "anime_english_name": "Puella Magi Madoka Magica",
+    "character_chinese_name": "志筑仁美",
+    "character_english_name": "Hitomi Shizuki",
+    "gender": "女",
+    "role": "小圆的同学"
+  },
+  {
+    "anime_chinese_name": "魔法少女小圆",
+    "anime_english_name": "Puella Magi Madoka Magica",
+    "character_chinese_name": "上条恭介",
+    "character_english_name": "Kyosuke Kamijo",
+    "gender": "男",
+    "role": "沙耶香的青梅竹马"
+  },
+
+  {
+    "anime_chinese_name": "刀剑神域",
+    "anime_english_name": "Sword Art Online",
+    "character_chinese_name": "桐谷和人",
+    "character_english_name": "Kirito",
+    "gender": "男",
+    "role": "主角/黑色剑士"
+  },
+  {
+    "anime_chinese_name": "刀剑神域",
+    "anime_english_name": "Sword Art Online",
+    "character_chinese_name": "结城明日奈",
+    "character_english_name": "Asuna",
+    "gender": "女",
+    "role": "女主角/闪光"
+  },
+  {
+    "anime_chinese_name": "刀剑神域",
+    "anime_english_name": "Sword Art Online",
+    "character_chinese_name": "结衣",
+    "character_english_name": "Yui",
+    "gender": "女",
+    "role": "AI导航精灵"
+  },
+  {
+    "anime_chinese_name": "刀剑神域",
+    "anime_english_name": "Sword Art Online",
+    "character_chinese_name": "桐谷直叶",
+    "character_english_name": "Leafa",
+    "gender": "女",
+    "role": "和人的妹妹/绿之剑士"
+  },
+  {
+    "anime_chinese_name": "刀剑神域",
+    "anime_english_name": "Sword Art Online",
+    "character_chinese_name": "朝田诗乃",
+    "character_english_name": "Sinon",
+    "gender": "女",
+    "role": "幽灵子弹篇女主角"
+  },
+  {
+    "anime_chinese_name": "刀剑神域",
+    "anime_english_name": "Sword Art Online",
+    "character_chinese_name": "克莱因",
+    "character_english_name": "Klein",
+    "gender": "男",
+    "role": "风林火山公会会长"
+  },
+  {
+    "anime_chinese_name": "刀剑神域",
+    "anime_english_name": "Sword Art Online",
+    "character_chinese_name": "莉兹贝特",
+    "character_english_name": "Lisbeth",
+    "gender": "女",
+    "role": "锻造师"
+  },
+  {
+    "anime_chinese_name": "刀剑神域",
+    "anime_english_name": "Sword Art Online",
+    "character_chinese_name": "西莉卡",
+    "character_english_name": "Silica",
+    "gender": "女",
+    "role": "驯兽师"
+  },
+  {
+    "anime_chinese_name": "刀剑神域",
+    "anime_english_name": "Sword Art Online",
+    "character_chinese_name": "茅场晶彦",
+    "character_english_name": "Akihiko Kayaba",
+    "gender": "男",
+    "role": "SAO创造者/希兹克利夫"
+  }
+]
