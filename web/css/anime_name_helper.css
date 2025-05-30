@@ -1,0 +1,210 @@
+/* 动漫人物选择器样式 */
+.anime-character-selector {
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* 工具栏样式 */
+.anime-character-selector .tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background-color: #f9f9f943;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.anime-character-selector .tools button {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.anime-character-selector .tools button.delete {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.anime-character-selector .tools button.delete:hover {
+    background-color: #ff5252;
+}
+
+.anime-character-selector .tools input.search {
+    flex: 1;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* 角色列表容器 */
+.anime-character-list {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* 作品分组样式 */
+.anime-group {
+    margin-bottom: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.2);
+    position: relative; /* 确保定位稳定 */
+}
+
+.anime-group-header {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #f5f7fab3 0%, #c3cfe2a1 100%);
+    border-bottom: 1px solid #dddddd82;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.anime-group-header:hover {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.anime-group-header span {
+    display: flex;
+    align-items: center;
+}
+
+.anime-group-header .collapse-arrow {
+    margin-right: 8px;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+    color: #666;
+}
+
+.anime-group-header:hover .collapse-arrow {
+    color: #333;
+}
+
+/* 角色容器样式 */
+.anime-characters-container {
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    background-color: rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+    min-height: 0; /* 确保容器可以完全收缩 */
+    overflow: hidden; /* 防止内容溢出 */
+}
+
+/* 折叠状态 */
+.anime-characters-container.collapsed {
+    display: none;
+}
+
+/* 角色标签样式 */
+.anime-character-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    margin: 2px;
+    background-color: rgba(255,255,255,0.3);
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+    user-select: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    flex-shrink: 0; /* 防止标签被压缩 */
+    white-space: nowrap; /* 防止文字换行 */
+    position: relative; /* 确保点击区域覆盖整个标签 */
+}
+
+.anime-character-tag:hover {
+    background-color: #f0f8ff;
+    border-color: #4CAF50;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.anime-character-tag.anime-character-tag-selected {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #45a049;
+    box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+.anime-character-tag input[type="checkbox"] {
+    margin-right: 6px;
+    width: 12px;
+    height: 12px;
+    pointer-events: none; /* 禁用复选框的直接点击 */
+}
+
+.anime-character-tag .character-name {
+    color: #333;
+    font-weight: 500;
+    margin-right: 4px;
+    pointer-events: none; /* 确保文字不阻止点击事件 */
+}
+.anime-character-tag.anime-character-tag-selected .character-name {
+    color: white;
+}
+.anime-character-tag .character-info {
+    color: #666;
+    font-size: 10px;
+    opacity: 0.8;
+    pointer-events: none; /* 确保文字不阻止点击事件 */
+}
+
+.anime-character-tag.anime-character-tag-selected .character-info {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 滚动条样式 */
+.anime-character-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.anime-character-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.anime-character-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.anime-character-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .anime-character-tag {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+    
+    .anime-group-header {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+    
+    .anime-characters-container {
+        padding: 6px;
+        gap: 3px;
+    }
+} 

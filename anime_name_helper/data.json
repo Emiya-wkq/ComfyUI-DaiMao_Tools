@@ -1,5 +1,95 @@
 [
   {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "阿尔托莉雅·潘德拉贡",
+    "character_english_name": "Artoria Pendragon",
+    "gender": "女",
+    "role": "Saber",
+    "description": "不列颠传说中的骑士王，Fate系列标志性角色，长期占据人气榜首[1,3,12](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "吉尔伽美什",
+    "character_english_name": "Gilgamesh",
+    "gender": "男",
+    "role": "Archer",
+    "description": "最古英雄王，拥有『王之财宝』，实力与话题性兼具的顶级人气角色[1,5,12](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "贞德",
+    "character_english_name": "Jeanne d'Arc",
+    "gender": "女",
+    "role": "Ruler",
+    "description": "法国圣女，FGO剧情核心人物，衍生形态黑贞德人气同样极高[3,12](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "卫宫士郎",
+    "character_english_name": "Shirou Emiya",
+    "gender": "男",
+    "role": "Master/Archer",
+    "description": "系列男主角，正义的理想主义者，英灵卫宫形态人气突出[1,6](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "远坂凛",
+    "character_english_name": "Rin Tohsaka",
+    "gender": "女",
+    "role": "Master",
+    "description": "天才魔术师，双马尾傲娇标杆角色，UBW线女主角[6,8](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "伊斯坎达尔",
+    "character_english_name": "Iskandar",
+    "gender": "男",
+    "role": "Rider",
+    "description": "征服王，Fate/Zero最具人格魅力的从者之一[1,9](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "玛修·基列莱特",
+    "character_english_name": "Mash Kyrielight",
+    "gender": "女",
+    "role": "Shielder",
+    "description": "FGO原创女主角，盾娘形象深入人心[3,12](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "库·丘林",
+    "character_english_name": "Cu Chulainn",
+    "gender": "男",
+    "role": "Lancer",
+    "description": "凯尔特英雄，『死棘之枪』持有者，战斗风格极具魅力[1,3](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "间桐樱",
+    "character_english_name": "Sakura Matou",
+    "gender": "女",
+    "role": "Master",
+    "description": "HF线女主角，黑化形态与剧情深度提升人气[6,7](@ref)"
+  },
+  {
+    "anime_chinese_name": "Fate",
+    "anime_english_name": "Fate",
+    "character_chinese_name": "尼禄·克劳狄乌斯",
+    "character_english_name": "Nero Claudius",
+    "gender": "女",
+    "role": "Saber",
+    "description": "罗马暴君，EXTRA系列高人气角色，与阿尔托莉雅并称红蓝Saber[1,3](@ref)"
+  },
+  {
     "anime_chinese_name": "鬼灭之刃",
     "anime_english_name": "Demon Slayer",
     "character_chinese_name": "灶门炭治郎",
@@ -72,79 +162,6 @@
     "role": "恋柱"
   },
   {
-    "anime_chinese_name": "鬼灭之刃",
-    "anime_english_name": "Demon Slayer",
-    "character_chinese_name": "时透无一郎",
-    "character_english_name": "Muichiro Tokito",
-    "gender": "男",
-    "role": "霞柱"
-  },
-  {
-    "anime_chinese_name": "鬼灭之刃",
-    "anime_english_name": "Demon Slayer",
-    "character_chinese_name": "鬼舞辻无惨",
-    "character_english_name": "Muzan Kibutsuji",
-    "gender": "男",
-    "role": "鬼王"
-  },
-  {
-    "anime_chinese_name": "鬼灭之刃",
-    "anime_english_name": "Demon Slayer",
-    "character_chinese_name": "童磨",
-    "character_english_name": "Douma",
-    "gender": "男",
-    "role": "上弦之贰"
-  },
-  {
-    "anime_chinese_name": "鬼灭之刃",
-    "anime_english_name": "Demon Slayer",
-    "character_chinese_name": "猗窝座",
-    "character_english_name": "Akaza",
-    "gender": "男",
-    "role": "上弦之叁"
-  },
-  {
-    "anime_chinese_name": "鬼灭之刃",
-    "anime_english_name": "Demon Slayer",
-    "character_chinese_name": "半天狗",
-    "character_english_name": "Hantengu",
-    "gender": "男",
-    "role": "上弦之肆"
-  },
-  {
-    "anime_chinese_name": "鬼灭之刃",
-    "anime_english_name": "Demon Slayer",
-    "character_chinese_name": "珠世",
-    "character_english_name": "Tamayo",
-    "gender": "女",
-    "role": "鬼医"
-  },
-  {
-    "anime_chinese_name": "鬼灭之刃",
-    "anime_english_name": "Demon Slayer",
-    "character_chinese_name": "愈史郎",
-    "character_english_name": "Yushiro",
-    "gender": "男",
-    "role": "助手"
-  },
-  {
-    "anime_chinese_name": "鬼灭之刃",
-    "anime_english_name": "Demon Slayer",
-    "character_chinese_name": "鳞泷左近次",
-    "character_english_name": "Sakonji Urokodaki",
-    "gender": "男",
-    "role": "培育师"
-  },
-  {
-    "anime_chinese_name": "鬼灭之刃",
-    "anime_english_name": "Demon Slayer",
-    "character_chinese_name": "桑岛慈悟郎",
-    "character_english_name": "Jigoro Kuwajima",
-    "gender": "男",
-    "role": "前鸣柱"
-  },
-
-  {
     "anime_chinese_name": "咒术回战",
     "anime_english_name": "Jujutsu Kaisen",
     "character_chinese_name": "虎杖悠仁",
@@ -187,26 +204,10 @@
   {
     "anime_chinese_name": "咒术回战",
     "anime_english_name": "Jujutsu Kaisen",
-    "character_chinese_name": "狗卷棘",
-    "character_english_name": "Toge Inumaki",
-    "gender": "男",
-    "role": "咒言师"
-  },
-  {
-    "anime_chinese_name": "咒术回战",
-    "anime_english_name": "Jujutsu Kaisen",
     "character_chinese_name": "熊猫",
     "character_english_name": "Panda",
     "gender": "男",
     "role": "咒骸"
-  },
-  {
-    "anime_chinese_name": "咒术回战",
-    "anime_english_name": "Jujutsu Kaisen",
-    "character_chinese_name": "乙骨忧太",
-    "character_english_name": "Yuta Okkotsu",
-    "gender": "男",
-    "role": "特级咒术师"
   },
   {
     "anime_chinese_name": "咒术回战",
@@ -331,7 +332,7 @@
   {
     "anime_chinese_name": "间谍过家家",
     "anime_english_name": "SPY×FAMILY",
-    "character_chinese_name": "约儿·佛杰",
+    "character_chinese_name": "约尔·佛杰",
     "character_english_name": "Yor Forger",
     "gender": "女",
     "role": "杀手/代号「睡美人」"
@@ -339,7 +340,7 @@
   {
     "anime_chinese_name": "间谍过家家",
     "anime_english_name": "SPY×FAMILY",
-    "character_chinese_name": "安妮亚·佛杰",
+    "character_chinese_name": "阿妮亚·佛杰",
     "character_english_name": "Anya Forger",
     "gender": "女",
     "role": "读心能力者/实验体007"
@@ -552,53 +553,7 @@
     "character_english_name": "Akihiko Kayaba",
     "gender": "男",
     "role": "SAO创造者/希兹克利夫"
-  },
-  {
-    "anime_chinese_name": "刀剑神域",
-    "anime_english_name": "Sword Art Online",
-    "character_chinese_name": "尤吉欧",
-    "character_english_name": "Eugeo",
-    "gender": "男",
-    "role": "Alicization篇主角"
-  },
-  {
-    "anime_chinese_name": "刀剑神域",
-    "anime_english_name": "Sword Art Online",
-    "character_chinese_name": "爱丽丝",
-    "character_english_name": "Alice",
-    "gender": "女",
-    "role": "整合骑士"
-  },
-  {
-    "anime_chinese_name": "刀剑神域",
-    "anime_english_name": "Sword Art Online",
-    "character_chinese_name": "绀野木棉季",
-    "character_english_name": "Yuuki",
-    "gender": "女",
-    "role": "绝剑"
-  },
-  {
-    "anime_chinese_name": "刀剑神域",
-    "anime_english_name": "Sword Art Online",
-    "character_chinese_name": "菊冈诚二郎",
-    "character_english_name": "Seijirou Kikuoka",
-    "gender": "男",
-    "role": "政府官员"
-  },
-  {
-    "anime_chinese_name": "刀剑神域",
-    "anime_english_name": "Sword Art Online",
-    "character_chinese_name": "贝尔库利",
-    "character_english_name": "Bercouli",
-    "gender": "男",
-    "role": "整合骑士团长"
-  },
-  {
-    "anime_chinese_name": "刀剑神域",
-    "anime_english_name": "Sword Art Online",
-    "character_chinese_name": "加百列·米勒",
-    "character_english_name": "Gabriel Miller",
-    "gender": "男",
-    "role": "最终反派"
   }
+
+
 ]

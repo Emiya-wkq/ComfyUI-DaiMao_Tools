@@ -63,6 +63,6 @@ for key in NODE_CLASS_MAPPINGS:
         else:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件去重"
 
-WEB_DIRECTORY = "./js"
+WEB_DIRECTORY = "./web"
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS'] 
