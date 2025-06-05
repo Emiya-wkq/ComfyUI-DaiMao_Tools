@@ -1,5 +1,221 @@
 [
   {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "空",
+    "character_english_name": "Aether",
+    "gender": "男",
+    "role": "旅行者"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "荧",
+    "character_english_name": "Lumine",
+    "gender": "女",
+    "role": "旅行者"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "派蒙",
+    "character_english_name": "Paimon",
+    "gender": "女",
+    "role": "向导"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "申鹤",
+    "character_english_name": "Shenhe",
+    "gender": "女",
+    "role": "仙家弟子"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "刻晴",
+    "character_english_name": "Keqing",
+    "gender": "女",
+    "role": "璃月七星·玉衡星"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "阿贝多",
+    "character_english_name": "Albedo",
+    "gender": "男",
+    "role": "炼金术士"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "优菈",
+    "character_english_name": "Eula",
+    "gender": "女",
+    "role": "浪花骑士"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "迪卢克",
+    "character_english_name": "Diluc",
+    "gender": "男",
+    "role": "晨曦酒庄主人"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "琴",
+    "character_english_name": "Jean",
+    "gender": "女",
+    "role": "西风骑士团代理团长"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "莫娜",
+    "character_english_name": "Mona",
+    "gender": "女",
+    "role": "占星术士"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "可莉",
+    "character_english_name": "Klee",
+    "gender": "女",
+    "role": "火花骑士"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "七七",
+    "character_english_name": "Qiqi",
+    "gender": "女",
+    "role": "僵尸医师"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "诺艾尔",
+    "character_english_name": "Noelle",
+    "gender": "女",
+    "role": "女仆骑士"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "菲谢尔",
+    "character_english_name": "Fischl",
+    "gender": "女",
+    "role": "断罪之皇女"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "班尼特",
+    "character_english_name": "Bennett",
+    "gender": "男",
+    "role": "冒险家"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "钟离",
+    "character_english_name": "Zhongli",
+    "gender": "男",
+    "role": "岩神"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "雷电将军",
+    "character_english_name": "Raiden Shogun",
+    "gender": "女",
+    "role": "雷神"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "温迪",
+    "character_english_name": "Venti",
+    "gender": "男",
+    "role": "风神"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "胡桃",
+    "character_english_name": "Hu Tao",
+    "gender": "女",
+    "role": "往生堂堂主"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "神里绫华",
+    "character_english_name": "Kamisato Ayaka",
+    "gender": "女",
+    "role": "社奉行大小姐"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "达达利亚",
+    "character_english_name": "Tartaglia",
+    "gender": "男",
+    "role": "愚人众执行官"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "甘雨",
+    "character_english_name": "Ganyu",
+    "gender": "女",
+    "role": "月海亭秘书"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "枫原万叶",
+    "character_english_name": "Kaedehara Kazuha",
+    "gender": "男",
+    "role": "浪人武士"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "宵宫",
+    "character_english_name": "Yoimiya",
+    "gender": "女",
+    "role": "烟花师"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "八重神子",
+    "character_english_name": "Yae Miko",
+    "gender": "女",
+    "role": "鸣神大社宫司"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "纳西妲",
+    "character_english_name": "Nahida",
+    "gender": "女",
+    "role": "草神"
+  },
+  {
+    "anime_chinese_name": "原神",
+    "anime_english_name": "Genshin Impact",
+    "character_chinese_name": "芙宁娜",
+    "character_english_name": "Furina",
+    "gender": "女",
+    "role": "水神"
+  },
+  {
     "anime_chinese_name": "Fate",
     "anime_english_name": "Fate",
     "character_chinese_name": "阿尔托莉雅·潘德拉贡",
