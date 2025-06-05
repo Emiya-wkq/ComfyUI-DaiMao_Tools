@@ -1,11 +1,12 @@
 # ComfyUI-DaiMao_Tools (呆毛工具)
+### [呆毛数字水印文档](blind_watermark_tool/README.md)
 
 一个为ComfyUI提供实用工具的自定义节点集合。
 [视频讲解](https://www.bilibili.com/video/BV1mMLUzKENN/?vd_source=65ad90b27a23c55bef8dcab54513d7e1)
 ## 功能节点
 ![image](https://github.com/user-attachments/assets/f1f11618-5f12-4226-a4be-139ec250a414)
 
-### [呆毛数字水印](blind_watermark_tool/README.md)
+
 
 ### 呆毛文件查重
 
