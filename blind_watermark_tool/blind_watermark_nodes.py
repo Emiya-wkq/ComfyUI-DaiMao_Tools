@@ -1,13 +1,15 @@
+# 移除文件开头的多进程处理，恢复简洁的导入
 import os
-import numpy as np
-import torch
-from PIL import Image
 import tempfile
+import uuid
+import numpy as np
+from PIL import Image, ImageFilter, ImageEnhance
+import cv2
+import torch
 import json
 import sys
 import unicodedata
 import re
-import uuid
 
 # 多进程问题的优雅解决方案
 def fix_multiprocessing_context():
@@ -103,8 +105,7 @@ class BlindWatermarkEmbed:
             "required": {
                 "image": ("IMAGE",),
                 "watermark_text": ("STRING", {"default": "DaiMao Tools", "multiline": True}),
-                "password_img": ("INT", {"default": 1, "min": 1, "max": 999999}),
-                "password_wm": ("INT", {"default": 1, "min": 1, "max": 999999}),
+                "password": ("INT", {"default": 1, "min": 1, "max": 999999}),
             },
             "optional": {
                 "watermark_image": ("IMAGE",),
@@ -117,21 +118,21 @@ class BlindWatermarkEmbed:
     CATEGORY = "暗水印工具"
     DISPLAY_NAME = "图片暗水印嵌入"
 
-    def embed_watermark(self, image, watermark_text, password_img, password_wm, watermark_image=None):
+    def embed_watermark(self, image, watermark_text, password, watermark_image=None):
         if not check_blind_watermark():
             raise Exception("blind_watermark 库未安装或导入失败，请运行: pip install blind-watermark")
         
         try:
             # 获取WaterMark类
-            WaterMark = get_watermark_class()
-            if WaterMark is None:
+            WaterMarkClass = get_watermark_class()
+            if WaterMarkClass is None:
                 raise Exception("无法获取 WaterMark 类")
             
             # 保存输入图片到临时文件
             temp_input_path = self.save_temp_image(image)
             
             # 创建WaterMark实例
-            bwm = WaterMark(password_img=password_img, password_wm=password_wm)
+            bwm = WaterMarkClass(password_img=password, password_wm=password)
             bwm.read_img(temp_input_path)
             
             # 判断水印类型并处理
@@ -179,8 +180,7 @@ class BlindWatermarkEmbed:
                 "type": watermark_type,
                 "content": watermark_content,
                 "shape_or_length": watermark_shape,
-                "password_img": password_img,
-                "password_wm": password_wm,
+                "password": password,
             }
             
             # 为文本水印添加额外信息
@@ -267,18 +267,22 @@ class BlindWatermarkExtractNode:
     
     @classmethod
     def INPUT_TYPES(cls):
+        # 直接定义支持的攻击类型
+        attack_types = ["无攻击", "抗截图", "抗压缩", "抗格式转换"]
+        
         return {
             "required": {
                 "image": ("IMAGE",),
-                "password_img": ("INT", {"default": 1, "min": 1, "max": 999999}),
-                "password_wm": ("INT", {"default": 1, "min": 1, "max": 999999}),
+                "password": ("INT", {"default": 1, "min": 1, "max": 999999}),
                 "watermark_type": (["text", "image"], {"default": "text"}),
+                "attack_type": (attack_types, {"default": "无攻击"}),
             },
             "optional": {
                 "original_text": ("STRING", {"default": "", "multiline": True}),
                 "watermark_length": ("INT", {"default": 64, "min": 1, "max": 10000}),
                 "watermark_width": ("INT", {"default": 64, "min": 1, "max": 1000}),
                 "watermark_height": ("INT", {"default": 64, "min": 1, "max": 1000}),
+                "original_image": ("IMAGE",),  # 新增：用于抗截图攻击的原始图片
             }
         }
 
@@ -288,23 +292,26 @@ class BlindWatermarkExtractNode:
     CATEGORY = "暗水印工具"
     DISPLAY_NAME = "图片暗水印提取"
 
-    def extract(self, image, password_img=1, password_wm=1, watermark_type="text", 
-                original_text="", watermark_length=64, watermark_width=64, watermark_height=64):
+    def extract(self, image, password, watermark_type="text", attack_type="无攻击", 
+                original_text="", watermark_length=64, watermark_width=64, watermark_height=64, original_image=None):
         """提取水印"""
         if not check_blind_watermark():
             raise Exception("blind_watermark 库未安装或导入失败，请运行: pip install blind-watermark")
         
         try:
             # 获取WaterMark类
-            WaterMark = get_watermark_class()
-            if WaterMark is None:
+            WaterMarkClass = get_watermark_class()
+            if WaterMarkClass is None:
                 raise Exception("无法获取 WaterMark 类")
             
             # 保存图片到临时文件
             temp_path = self.save_temp_image(image)
             
+            # 根据攻击类型进行图片预处理
+            processed_path = self.apply_attack_resistance(temp_path, attack_type, original_image)
+            
             # 创建WaterMark实例
-            bwm = WaterMark(password_img=password_img, password_wm=password_wm)
+            bwm = WaterMarkClass(password_img=password, password_wm=password)
             
             if watermark_type == "image":
                 # 图片水印提取
@@ -322,7 +329,7 @@ class BlindWatermarkExtractNode:
                     print(f"临时输出路径: {temp_output}")
                     
                     # 使用指定的输出路径进行提取
-                    extracted_result = bwm.extract(temp_path, wm_shape=wm_shape, mode='img', out_wm_name=temp_output)
+                    extracted_result = bwm.extract(processed_path, wm_shape=wm_shape, mode='img', out_wm_name=temp_output)
                     
                     print(f"图片水印提取结果类型: {type(extracted_result)}")
                     
@@ -330,7 +337,6 @@ class BlindWatermarkExtractNode:
                     if os.path.exists(temp_output):
                         print("从输出文件读取提取结果")
                         # 从文件读取
-                        import cv2
                         extracted_img = cv2.imread(temp_output)
                         if extracted_img is not None:
                             # 转换BGR到RGB
@@ -349,7 +355,7 @@ class BlindWatermarkExtractNode:
                     # 方法2: 尝试不指定输出文件名
                     try:
                         print("尝试方法2: 不指定输出文件名")
-                        extracted_result = bwm.extract(temp_path, wm_shape=wm_shape, mode='img')
+                        extracted_result = bwm.extract(processed_path, wm_shape=wm_shape, mode='img')
                         print(f"方法2成功，结果类型: {type(extracted_result)}")
                     except Exception as e2:
                         print(f"方法2也失败: {e2}")
@@ -357,7 +363,7 @@ class BlindWatermarkExtractNode:
                         # 方法3: 使用文本模式作为备选
                         try:
                             print("尝试方法3: 使用文本模式提取")
-                            text_result = bwm.extract(temp_path, wm_shape=watermark_height*watermark_width*3, mode='str')
+                            text_result = bwm.extract(processed_path, wm_shape=watermark_height*watermark_width*3, mode='str')
                             print(f"文本模式提取结果: {len(text_result) if text_result else 0} 字符")
                             
                             # 创建一个占位符图片
@@ -386,7 +392,7 @@ class BlindWatermarkExtractNode:
                     
                     # 清理临时文件
                     try:
-                        os.unlink(temp_path)
+                        os.unlink(processed_path)
                     except:
                         pass
                     
@@ -401,8 +407,11 @@ class BlindWatermarkExtractNode:
                 # 文本水印提取
                 # 计算实际使用的长度
                 if original_text and original_text.strip():
-                    actual_length = self.calculate_watermark_length(original_text)
-                    print(f"根据原始文本 '{original_text}' 计算的bit长度: {actual_length}")
+                    # 使用与嵌入时一致的方法计算长度
+                    temp_bwm = WaterMarkClass(password_img=password, password_wm=password)
+                    temp_bwm.read_wm(original_text, mode='str')
+                    actual_length = len(temp_bwm.wm_bit)
+                    print(f"根据原始文本 '{original_text}' 使用嵌入算法计算的bit长度: {actual_length}")
                 else:
                     actual_length = watermark_length
                     print(f"使用手动输入的长度: {watermark_length}")
@@ -410,7 +419,7 @@ class BlindWatermarkExtractNode:
                 print(f"开始提取文本水印，使用长度: {actual_length}")
                 
                 # 提取文本水印
-                extracted_result = bwm.extract(temp_path, wm_shape=actual_length, mode='str')
+                extracted_result = bwm.extract(processed_path, wm_shape=actual_length, mode='str')
                 
                 print(f"原始提取结果: {repr(extracted_result)}")
                 
@@ -419,7 +428,7 @@ class BlindWatermarkExtractNode:
                 
                 # 清理临时文件
                 try:
-                    os.unlink(temp_path)
+                    os.unlink(processed_path)
                 except:
                     pass
                 
@@ -533,6 +542,234 @@ class BlindWatermarkExtractNode:
         
         print(f"临时图片已保存到: {temp_path}")
         return temp_path
+
+    def apply_attack_resistance(self, image_path, attack_type, original_image=None):
+        """根据攻击类型对图片进行预处理"""
+        if attack_type == "无攻击":
+            return image_path
+        
+        try:
+            print(f"应用抗攻击处理: {attack_type}")
+            
+            if attack_type == "抗截图":
+                return self._process_anti_screenshot(image_path, original_image)
+            elif attack_type == "抗压缩":
+                return self._process_anti_compression(image_path)
+            elif attack_type == "抗格式转换":
+                return self._process_anti_format_conversion(image_path)
+            else:
+                print(f"未知的攻击类型: {attack_type}")
+                return image_path
+                
+        except Exception as e:
+            print(f"抗攻击处理失败: {e}")
+            return image_path
+    
+    def _process_anti_screenshot(self, image_path, original_image=None):
+        """处理抗截图攻击 - 使用blind_watermark库的恢复方法"""
+        try:
+            from blind_watermark.recover import recover_crop, estimate_crop_parameters
+            
+            # 生成恢复后的图片路径
+            temp_dir = tempfile.gettempdir()
+            recovered_path = os.path.join(temp_dir, f"recovered_screenshot_{uuid.uuid4().hex}.png")
+            
+            if original_image is not None:
+                # 方法1：有原始图片，使用estimate_crop_parameters精确估计
+                print("检测到原始图片，使用精确参数估计...")
+                
+                try:
+                    # 保存原始图片到临时文件
+                    original_path = self.save_temp_image(original_image)
+                    
+                    # 使用estimate_crop_parameters估计攻击参数
+                    print("正在估计截图攻击参数...")
+                    (x1, y1, x2, y2), image_o_shape, score, scale_infer = estimate_crop_parameters(
+                        original_file=original_path,
+                        template_file=image_path,
+                        scale=(0.3, 3.0),  # 扩大搜索范围
+                        search_num=300     # 增加搜索次数提高精度
+                    )
+                    
+                    print(f"估计的攻击参数: x1={x1}, y1={y1}, x2={x2}, y2={y2}")
+                    print(f"估计的缩放比例: {scale_infer}, 匹配得分: {score}")
+                    
+                    # 应用恢复处理
+                    recover_crop(template_file=image_path, 
+                               output_file_name=recovered_path,
+                               loc=(x1, y1, x2, y2), 
+                               image_o_shape=image_o_shape)
+                    
+                    # 清理原始图片临时文件
+                    try:
+                        os.unlink(original_path)
+                    except:
+                        pass
+                    
+                    if os.path.exists(recovered_path):
+                        print(f"基于原始图片的截图攻击恢复成功: {recovered_path}")
+                        return recovered_path
+                    else:
+                        print("精确恢复失败，尝试多参数方法...")
+                        
+                except Exception as e:
+                    print(f"精确参数估计失败: {e}")
+                    print("回退到多参数尝试方法...")
+            
+            # 方法2：没有原始图片或精确估计失败，使用多参数尝试
+            print("使用多参数尝试策略...")
+            
+            img = Image.open(image_path)
+            w, h = img.size
+            
+            # 定义多组常见的截图攻击参数
+            attack_params = [
+                # 格式: (x1_ratio, y1_ratio, x2_ratio, y2_ratio, description)
+                (0.0, 0.0, 1.0, 1.0, "无裁剪"),
+                (0.05, 0.05, 0.95, 0.95, "轻微边缘裁剪"),
+                (0.1, 0.1, 0.9, 0.9, "中等边缘裁剪"),
+                (0.15, 0.15, 0.85, 0.85, "较大边缘裁剪"),
+                (0.02, 0.02, 0.98, 0.98, "微小边缘裁剪"),
+                (0.08, 0.08, 0.92, 0.92, "常见截图裁剪"),
+                (0.0, 0.05, 1.0, 0.95, "上下边缘裁剪"),
+                (0.05, 0.0, 0.95, 1.0, "左右边缘裁剪"),
+                (0.03, 0.08, 0.97, 0.92, "不对称裁剪1"),
+                (0.08, 0.03, 0.92, 0.97, "不对称裁剪2"),
+            ]
+            
+            best_recovered_path = None
+            best_score = -1
+            
+            for i, (x1_ratio, y1_ratio, x2_ratio, y2_ratio, desc) in enumerate(attack_params):
+                try:
+                    # 计算实际坐标
+                    x1 = int(w * x1_ratio)
+                    y1 = int(h * y1_ratio)
+                    x2 = int(w * x2_ratio)
+                    y2 = int(h * y2_ratio)
+                    
+                    print(f"尝试参数 {i+1}/{len(attack_params)}: {desc}")
+                    print(f"  坐标: x1={x1}, y1={y1}, x2={x2}, y2={y2}")
+                    
+                    # 生成当前尝试的恢复路径
+                    current_recovered_path = os.path.join(temp_dir, f"recovered_try_{i}_{uuid.uuid4().hex}.png")
+                    
+                    # 应用恢复处理
+                    recover_crop(template_file=image_path, 
+                               output_file_name=current_recovered_path,
+                               loc=(x1, y1, x2, y2), 
+                               image_o_shape=(h, w))
+                    
+                    if os.path.exists(current_recovered_path):
+                        # 简单的质量评估：检查恢复后图片的尺寸和内容
+                        recovered_img = Image.open(current_recovered_path)
+                        
+                        # 计算简单的质量分数（基于尺寸匹配度）
+                        size_score = min(recovered_img.width / w, recovered_img.height / h)
+                        
+                        print(f"  恢复成功，质量分数: {size_score:.3f}")
+                        
+                        if size_score > best_score:
+                            best_score = size_score
+                            if best_recovered_path and os.path.exists(best_recovered_path):
+                                try:
+                                    os.unlink(best_recovered_path)
+                                except:
+                                    pass
+                            best_recovered_path = current_recovered_path
+                        else:
+                            # 删除质量较差的恢复结果
+                            try:
+                                os.unlink(current_recovered_path)
+                            except:
+                                pass
+                    else:
+                        print(f"  恢复失败")
+                        
+                except Exception as e:
+                    print(f"  参数尝试失败: {e}")
+                    continue
+            
+            if best_recovered_path and os.path.exists(best_recovered_path):
+                # 将最佳结果移动到最终路径
+                if best_recovered_path != recovered_path:
+                    try:
+                        os.rename(best_recovered_path, recovered_path)
+                    except:
+                        # 如果重命名失败，复制文件
+                        import shutil
+                        shutil.copy2(best_recovered_path, recovered_path)
+                        os.unlink(best_recovered_path)
+                
+                print(f"多参数尝试完成，最佳恢复结果: {recovered_path} (分数: {best_score:.3f})")
+                return recovered_path
+            else:
+                print("所有参数尝试都失败，使用原图")
+                return image_path
+                
+        except ImportError:
+            print("无法导入blind_watermark.recover模块，使用原图")
+            return image_path
+        except Exception as e:
+            print(f"截图攻击处理失败: {e}")
+            import traceback
+            traceback.print_exc()
+            return image_path
+    
+    def _process_anti_compression(self, image_path):
+        """处理抗压缩攻击"""
+        try:
+            # 对于压缩攻击，主要是质量损失，可以通过图像增强来部分恢复
+            img = Image.open(image_path)
+            
+            # 轻微的锐化处理
+            img = img.filter(ImageFilter.SHARPEN)
+            
+            # 增强对比度
+            enhancer = ImageEnhance.Contrast(img)
+            img = enhancer.enhance(1.1)
+            
+            # 保存处理后的图片
+            temp_dir = tempfile.gettempdir()
+            processed_path = os.path.join(temp_dir, f"anti_compression_{uuid.uuid4().hex}.jpg")
+            
+            if img.mode != 'RGB':
+                img = img.convert('RGB')
+            img.save(processed_path, 'JPEG', quality=95)
+            
+            print(f"抗压缩处理完成: {processed_path}")
+            return processed_path
+            
+        except Exception as e:
+            print(f"抗压缩处理失败: {e}")
+            return image_path
+    
+    def _process_anti_format_conversion(self, image_path):
+        """处理抗格式转换攻击"""
+        try:
+            # 对于格式转换攻击，主要是色彩空间和编码的变化
+            img = Image.open(image_path)
+            
+            # 确保RGB模式
+            if img.mode != 'RGB':
+                img = img.convert('RGB')
+            
+            # 色彩增强
+            enhancer = ImageEnhance.Color(img)
+            img = enhancer.enhance(1.05)
+            
+            # 保存处理后的图片
+            temp_dir = tempfile.gettempdir()
+            processed_path = os.path.join(temp_dir, f"anti_format_{uuid.uuid4().hex}.png")
+            
+            img.save(processed_path, 'PNG')
+            
+            print(f"抗格式转换处理完成: {processed_path}")
+            return processed_path
+            
+        except Exception as e:
+            print(f"抗格式转换处理失败: {e}")
+            return image_path
 
 # 为了兼容性，保留旧的类名
 BlindWatermarkExtract = BlindWatermarkExtractNode
