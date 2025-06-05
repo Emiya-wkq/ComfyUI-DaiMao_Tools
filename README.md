@@ -5,6 +5,8 @@
 ## 功能节点
 ![image](https://github.com/user-attachments/assets/f1f11618-5f12-4226-a4be-139ec250a414)
 
+### [呆毛数字水印](blind_watermark_tool/README.md)
+
 ### 呆毛文件查重
 
 这个节点可以帮助您找出指定目录下的重复文件，支持多种筛选方式：
