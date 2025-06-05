@@ -6,12 +6,15 @@ from .daimao_file_dedup import NODE_CLASS_MAPPINGS as DEDUP_NODE_MAPPINGS
 from .daimao_file_dedup import NODE_DISPLAY_NAME_MAPPINGS as DEDUP_DISPLAY_MAPPINGS
 from .daimao_file_deduplicator_with_symlink import DaiMaoFileDeduplicatorWithSymlink
 from .anime_name_helper.anime_name_helper_node import AnimeNameHelper
+from .blind_watermark_tool import NODE_CLASS_MAPPINGS as WATERMARK_NODE_MAPPINGS
+from .blind_watermark_tool import NODE_DISPLAY_NAME_MAPPINGS as WATERMARK_DISPLAY_MAPPINGS
 
 # 合并节点映射
 NODE_CLASS_MAPPINGS = {}
 NODE_CLASS_MAPPINGS.update(FINDER_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(DEDUPLICATOR_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(DEDUP_NODE_MAPPINGS)
+NODE_CLASS_MAPPINGS.update(WATERMARK_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update({
     "anime_name_helper": AnimeNameHelper,
     "呆毛文件去重器(带符号链接)": DaiMaoFileDeduplicatorWithSymlink,
@@ -22,6 +25,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {}
 NODE_DISPLAY_NAME_MAPPINGS.update(FINDER_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(DEDUPLICATOR_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(DEDUP_DISPLAY_MAPPINGS)
+NODE_DISPLAY_NAME_MAPPINGS.update(WATERMARK_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update({
     "anime_name_helper": "呆毛动漫人物名称辅助器",
     "呆毛文件去重器(带符号链接)": "呆毛文件去重器(带符号链接)",
