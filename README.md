@@ -1,241 +1,155 @@
-# ComfyUI-DaiMao_Tools
+# ComfyUI-DaiMao_Tools (呆毛工具)
+### [呆毛数字水印文档](blind_watermark_tool/README.md)
 
-一个专为ComfyUI设计的暗水印工具集合，支持文本和图片水印的嵌入与提取。
+一个为ComfyUI提供实用工具的自定义节点集合。
+[视频讲解](https://www.bilibili.com/video/BV1mMLUzKENN/?vd_source=65ad90b27a23c55bef8dcab54513d7e1)
+## 功能节点
+![image](https://github.com/user-attachments/assets/f1f11618-5f12-4226-a4be-139ec250a414)
 
-## 🌟 主要功能
 
-### 📝 文本水印
-- **智能长度计算**: 自动根据文本内容计算所需的bit长度
-- **多语言支持**: 完美支持中文、英文及特殊字符
-- **编码优化**: 智能处理UTF-8编码，避免乱码问题
-- **长度兼容**: 支持手动指定长度或自动计算
 
-### 🖼️ 图片水印
-- **灵活尺寸**: 支持任意尺寸的水印图片
-- **格式兼容**: 自动处理不同图片格式转换
-- **质量保证**: 使用高质量JPEG格式确保兼容性
+### 呆毛文件查重
 
-### 🔐 安全特性
-- **双重密码**: 支持图片密码和水印密码
-- **隐蔽性强**: 基于blind_watermark算法，肉眼不可见
-- **抗攻击**: 对常见图片处理操作具有一定抗性
+这个节点可以帮助您找出指定目录下的重复文件，支持多种筛选方式：
 
-## 📦 安装要求
+- **模型文件**：专门查找AI模型相关的文件（.ckpt, .safetensors, .pt, .pth, .bin）
+- **大文件**：查找超过指定大小阈值的文件
+- **全部文件**：查找目录中的所有文件
 
-### 依赖库
-```bash
-pip install blind-watermark
-pip install opencv-python
-pip install pillow
-pip install torch
-pip install numpy
-```
+所有文件通过SHA256哈希值进行比对，确保找到的是真正的重复文件。节点会计算重复文件占用的额外存储空间，帮您释放磁盘空间。
 
-### ComfyUI集成
-1. 将本项目克隆到ComfyUI的`custom_nodes`目录
+> **搜索关键词**：您可以使用以下任何关键词在ComfyUI节点搜索框中找到此节点：
+> - 呆毛文件查重
+> - 查找重复文件
+> - 文件查重
+> - DaiMaoFileFinder
+> - FileDuplicatesFinder
+> - FindDuplicates
+
+### 呆毛文件去重器
+
+这个节点接收由"呆毛文件查重"节点提供的JSON数据，根据选择的策略删除重复文件：
+
+- **保留第一个文件**：保留每组重复文件中的第一个文件，删除其余文件
+- **保留最近修改的文件**：保留每组中最近修改过的文件
+- **保留最大的文件**：保留每组中最大的文件
+- **保留路径最短的文件**：保留每组中路径最短的文件
+
+节点提供"模拟"模式，让您在实际删除前预览将会删除哪些文件。
+
+> **搜索关键词**：您可以使用以下任何关键词在ComfyUI节点搜索框中找到此节点：
+> - 呆毛文件去重器
+> - 删除重复文件
+> - DaiMaoDeduplicator
+> - FileDeduplicator
+> - RemoveDuplicates
+
+### 呆毛文件去重
+
+这是一个功能完整的节点（为保持向后兼容），综合了查重功能，但不提供删除功能。如果您只需要查找并查看重复文件信息，可以使用此节点。
+
+> **搜索关键词**：您可以使用以下任何关键词在ComfyUI节点搜索框中找到此节点：
+> - 呆毛文件去重
+> - 文件去重
+> - 文件查重
+> - DaiMaoFileDedup
+> - FileDeduplication
+> - DedupFiles
+
+## 安装
+
+1. 将此仓库克隆到ComfyUI的`custom_nodes`目录：
+   ```
+   cd ComfyUI/custom_nodes
+   git clone https://github.com/Emiya-wkq/ComfyUI-DaiMao_Tools.git
+   ```
+
 2. 重启ComfyUI
-3. 在节点列表中找到"暗水印工具"分类
 
-## 🚀 使用指南
+## 使用方法
 
-### 水印嵌入节点 (BlindWatermarkEmbed)
+### 单节点模式（呆毛文件去重）
 
-#### 输入参数
-- **image**: 要嵌入水印的原始图片
-- **watermark_text**: 要嵌入的文本水印（默认："DaiMao Tools"）
-- **password_img**: 图片密码（1-999999）
-- **password_wm**: 水印密码（1-999999）
-- **watermark_image**: 可选的图片水印
+1. 从节点选择菜单中找到"呆毛工具"分类，或直接在搜索框中输入"文件去重"
+2. 添加"呆毛文件去重"节点到工作流
+3. 设置以下参数：
+   - `directory_path`：要扫描的目录路径
+   - `dedup_type`：选择"模型文件"、"大文件"或"全部文件"
+   - `size_threshold_mb`：当选择"大文件"时，设置大小阈值（MB）
+4. 运行工作流后，节点将输出重复文件的详细信息，包括文件路径和大小
 
-#### 输出结果
-- **嵌入水印的图片**: 包含隐藏水印的图片
-- **水印信息**: JSON格式的水印详细信息
+### 分离节点模式（查重+去重）
 
-#### 使用示例
+1. 添加"呆毛文件查重"节点到工作流
+2. 设置查重参数
+3. 添加"呆毛文件去重器"节点
+4. 将"呆毛文件查重"的"重复文件JSON数据"输出连接到"呆毛文件去重器"的"duplicate_data"输入
+5. 在"呆毛文件去重器"上选择保留策略和是否为模拟运行
+6. 运行工作流，先查找重复文件，然后根据策略删除文件
 
-**文本水印嵌入:**
+### 示例工作流
+
+项目包含两个预配置的示例工作流：
+
+1. `examples/file_dedup_workflow.json` - 单节点模式示例
+2. `examples/file_dedup_with_separate_nodes.json` - 分离节点模式示例
+
+导入步骤：
+1. 在ComfyUI中点击右上角的"Load"按钮
+2. 导航到`custom_nodes/ComfyUI-DaiMao_Tools/examples`目录
+3. 选择需要的工作流文件
+4. 根据需要修改参数
+5. 点击"Queue Prompt"运行工作流
+
+## 输出示例
+
+### 呆毛文件查重节点输出
+
 ```
-输入图片 → BlindWatermarkEmbed节点
-├─ watermark_text: "版权所有 © 2024"
-├─ password_img: 12345
-├─ password_wm: 67890
-└─ watermark_image: (留空)
-```
+找到以下重复文件组：
 
-**图片水印嵌入:**
-```
-输入图片 → BlindWatermarkEmbed节点
-├─ watermark_text: (留空)
-├─ password_img: 12345
-├─ password_wm: 67890
-└─ watermark_image: 水印图片
-```
+组 1 (SHA256: 7a8b9c0d1e...): 2 个文件，浪费空间: 2048.55 MB
+  • D:/models/model1.safetensors (2048.55 MB)
+  • D:/models/backup/model1.safetensors (2048.55 MB)
 
-### 水印提取节点 (BlindWatermarkExtractNode)
+组 2 (SHA256: 2e3f4a5b6c...): 3 个文件，浪费空间: 4097.10 MB
+  • D:/models/model2.safetensors (2048.55 MB)
+  • D:/models/old/model2.safetensors (2048.55 MB)
+  • D:/models/test/model2.safetensors (2048.55 MB)
 
-#### 输入参数
-- **image**: 包含水印的图片
-- **password_img**: 图片密码（必须与嵌入时一致）
-- **password_wm**: 水印密码（必须与嵌入时一致）
-- **watermark_type**: 水印类型（"text"或"image"）
-- **original_text**: 原始文本（用于自动计算长度）
-- **watermark_length**: 手动指定的水印长度
-- **watermark_width**: 图片水印宽度
-- **watermark_height**: 图片水印高度
-
-#### 输出结果
-- **提取的水印文本**: 解码后的文本内容
-- **提取的水印图片**: 提取的图片水印
-
-#### 使用示例
-
-**文本水印提取（自动长度）:**
-```
-含水印图片 → BlindWatermarkExtractNode
-├─ password_img: 12345
-├─ password_wm: 67890
-├─ watermark_type: "text"
-├─ original_text: "版权所有 © 2024"  # 自动计算长度
-└─ watermark_length: (忽略)
+总计找到 2 组重复文件，共 5 个文件。
+浪费的存储空间：6145.65 MB (6.00 GB)
 ```
 
-**文本水印提取（手动长度）:**
-```
-含水印图片 → BlindWatermarkExtractNode
-├─ password_img: 12345
-├─ password_wm: 67890
-├─ watermark_type: "text"
-├─ original_text: (留空)
-└─ watermark_length: 128  # 手动指定
-```
+### 呆毛文件去重器节点输出
 
-**图片水印提取:**
 ```
-含水印图片 → BlindWatermarkExtractNode
-├─ password_img: 12345
-├─ password_wm: 67890
-├─ watermark_type: "image"
-├─ watermark_width: 64
-└─ watermark_height: 64
+文件去重模拟执行结果：
+
+处理组 1 (SHA256: 7a8b9c0d1e...):
+  • 保留: D:/models/model1.safetensors (2048.55 MB)
+  • 将删除: D:/models/backup/model1.safetensors (2048.55 MB)
+
+处理组 2 (SHA256: 2e3f4a5b6c...):
+  • 保留: D:/models/model2.safetensors (2048.55 MB)
+  • 将删除: D:/models/old/model2.safetensors (2048.55 MB)
+  • 将删除: D:/models/test/model2.safetensors (2048.55 MB)
+
+模拟删除完成，将删除 2 组中的 3 个文件，预计释放空间: 6145.65 MB (6.00 GB)
+注意：这只是模拟结果，没有实际删除文件。要执行实际删除，请将'dry_run'设置为'否'。
 ```
 
-## 🔧 技术特性
+## 注意事项
 
-### 多进程兼容
-- 自动修复multiprocessing上下文问题
-- 支持ComfyUI的多线程环境
-- 优雅处理库导入冲突
+- 文件较多时，扫描过程可能需要一些时间，特别是"全部文件"模式
+- 建议先使用"模型文件"或"大文件"模式减少扫描范围
+- 计算SHA256哈希值需要读取完整文件内容，对于大文件可能比较耗时
+- 在执行实际删除前，强烈建议先使用"模拟"模式（dry_run="是"）查看哪些文件将被删除
+- 删除操作不可逆，请谨慎使用 
 
-### 文件格式优化
-- 使用JPEG格式确保OpenCV兼容性
-- 自动RGB模式转换
-- 临时文件安全管理
+## 更新日志
 
-### 错误处理
-- 多重备选方案确保提取成功
-- 详细的错误日志和调试信息
-- 优雅的异常恢复机制
-
-### 编码处理
-- UTF-8编码自动检测和转换
-- 控制字符过滤
-- 多语言字符支持
-
-## 📊 水印信息格式
-
-嵌入成功后返回的水印信息包含：
-
-**文本水印信息:**
-```json
-{
-    "type": "text",
-    "content": "版权所有 © 2024",
-    "shape_or_length": 128,
-    "password_img": 12345,
-    "password_wm": 67890,
-    "text": "版权所有 © 2024",
-    "length": 128,
-    "char_count": 12,
-    "utf8_bytes": 16
-}
-```
-
-**图片水印信息:**
-```json
-{
-    "type": "image",
-    "content": "图片水印 (64, 64)",
-    "shape_or_length": [64, 64],
-    "password_img": 12345,
-    "password_wm": 67890
-}
-```
-
-## ⚠️ 注意事项
-
-### 密码管理
-- 嵌入和提取时必须使用相同的密码组合
-- 建议使用复杂密码提高安全性
-- 妥善保管密码，丢失后无法恢复水印
-
-### 长度计算
-- 文本水印长度 = UTF-8字节数 × 8
-- 建议优先使用原始文本自动计算长度
-- 手动指定长度时需确保足够容纳文本内容
-
-### 图片要求
-- 载体图片建议尺寸大于256×256
-- 水印图片尺寸应小于载体图片
-- 支持RGB和灰度图片
-
-### 性能优化
-- 大图片处理可能需要较长时间
-- 建议在高性能设备上处理大尺寸图片
-- 临时文件会自动清理
-
-## 🐛 故障排除
-
-### 常见问题
-
-**1. "blind_watermark 库未安装"**
-```bash
-pip install blind-watermark
-```
-
-**2. "OpenCV写入错误"**
-- 已自动使用JPEG格式解决
-- 确保有足够的磁盘空间
-
-**3. "提取结果乱码"**
-- 检查密码是否正确
-- 使用原始文本自动计算长度
-- 确认水印类型选择正确
-
-**4. "多进程错误"**
-- 已自动修复，重启ComfyUI即可
-
-### 调试模式
-设置环境变量启用详细日志：
-```bash
-export WATERMARK_DEBUG=1
-```
-
-## 📄 许可证
-
-本项目采用MIT许可证，详见LICENSE文件。
-
-## 🤝 贡献
-
-欢迎提交Issue和Pull Request来改进本项目！
-
-## 📞 支持
-
-如有问题或建议，请通过以下方式联系：
-- 提交GitHub Issue
-- 发送邮件至项目维护者
-
----
-
-**版本**: 2.0.0  
-**更新日期**: 2024年12月  
-**兼容性**: ComfyUI 最新版本
+### 2025-04-30
+- 新增带链接版本的节点，支持在 Windows 系统下创建软/硬链接，方便管理重复文件而不需要实际删除文件
+- 软链接版本节点提供与标准版本相同的功能，但增加了软/硬链接创建选项
+- 用户可以选择将重复文件替换为软/硬链接，从而节省磁盘空间同时保持文件结构完整性
