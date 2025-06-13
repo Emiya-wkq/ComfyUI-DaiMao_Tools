@@ -8,6 +8,8 @@ from .daimao_file_deduplicator_with_symlink import DaiMaoFileDeduplicatorWithSym
 from .anime_name_helper.anime_name_helper_node import AnimeNameHelper
 from .blind_watermark_tool import NODE_CLASS_MAPPINGS as WATERMARK_NODE_MAPPINGS
 from .blind_watermark_tool import NODE_DISPLAY_NAME_MAPPINGS as WATERMARK_DISPLAY_MAPPINGS
+from .mask import NODE_CLASS_MAPPINGS as MASK_NODE_MAPPINGS
+from .mask import NODE_DISPLAY_NAME_MAPPINGS as MASK_DISPLAY_MAPPINGS
 
 # 合并节点映射
 NODE_CLASS_MAPPINGS = {}
@@ -15,6 +17,7 @@ NODE_CLASS_MAPPINGS.update(FINDER_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(DEDUPLICATOR_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(DEDUP_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(WATERMARK_NODE_MAPPINGS)
+NODE_CLASS_MAPPINGS.update(MASK_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update({
     "anime_name_helper": AnimeNameHelper,
     "呆毛文件去重器(带符号链接)": DaiMaoFileDeduplicatorWithSymlink,
@@ -26,6 +29,7 @@ NODE_DISPLAY_NAME_MAPPINGS.update(FINDER_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(DEDUPLICATOR_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(DEDUP_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(WATERMARK_DISPLAY_MAPPINGS)
+NODE_DISPLAY_NAME_MAPPINGS.update(MASK_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update({
     "anime_name_helper": "呆毛动漫人物名称辅助器",
     "呆毛文件去重器(带符号链接)": "呆毛文件去重器(带符号链接)",
@@ -52,7 +56,16 @@ NODE_CLASS_MAPPINGS.update({
     "DaiMaoDeduplicatorWithSymlink": NODE_CLASS_MAPPINGS["呆毛文件去重器(带符号链接)"],
     "FileDeduplicatorWithSymlink": NODE_CLASS_MAPPINGS["呆毛文件去重器(带符号链接)"],
     "RemoveDuplicatesWithSymlink": NODE_CLASS_MAPPINGS["呆毛文件去重器(带符号链接)"],
-    "删除重复文件(带符号链接)": NODE_CLASS_MAPPINGS["呆毛文件去重器(带符号链接)"]
+    "删除重复文件(带符号链接)": NODE_CLASS_MAPPINGS["呆毛文件去重器(带符号链接)"],
+    
+    # Mask节点别名
+    "BoundingBox": NODE_CLASS_MAPPINGS["BoundingBoxMask"],
+    "MinRectMask": NODE_CLASS_MAPPINGS["BoundingBoxMask"],
+    "最小矩形": NODE_CLASS_MAPPINGS["BoundingBoxMask"],
+    "Seam": NODE_CLASS_MAPPINGS["SeamMask"],
+    "接缝遮罩": NODE_CLASS_MAPPINGS["SeamMask"],
+    "Grid": NODE_CLASS_MAPPINGS["GridMask"],
+    "网格遮罩": NODE_CLASS_MAPPINGS["GridMask"],
 })
 
 # 同步更新显示名称
@@ -64,6 +77,12 @@ for key in NODE_CLASS_MAPPINGS:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件去重器"
         elif key in ["DaiMaoDeduplicatorWithSymlink", "FileDeduplicatorWithSymlink", "RemoveDuplicatesWithSymlink", "删除重复文件(带符号链接)"]:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件去重器(带符号链接)"
+        elif key in ["BoundingBox", "MinRectMask", "最小矩形"]:
+            NODE_DISPLAY_NAME_MAPPINGS[key] = "最小矩形包裹"
+        elif key in ["Seam", "接缝遮罩"]:
+            NODE_DISPLAY_NAME_MAPPINGS[key] = "接缝区域遮罩"
+        elif key in ["Grid", "网格遮罩"]:
+            NODE_DISPLAY_NAME_MAPPINGS[key] = "网格化遮罩"
         else:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件去重"
 
