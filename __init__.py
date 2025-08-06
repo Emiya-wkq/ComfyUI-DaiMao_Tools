@@ -76,6 +76,13 @@ NODE_CLASS_MAPPINGS.update({
     "PadNumber": NODE_CLASS_MAPPINGS["NumberPaddingNode"],
     "ZeroPadding": NODE_CLASS_MAPPINGS["NumberPaddingNode"],
     "补零": NODE_CLASS_MAPPINGS["NumberPaddingNode"],
+    
+    # 文件存在检查节点别名
+    "FileExists": NODE_CLASS_MAPPINGS["FileExistsNode"],
+    "CheckFileExists": NODE_CLASS_MAPPINGS["FileExistsNode"],
+    "IsFileExists": NODE_CLASS_MAPPINGS["FileExistsNode"],
+    "文件存在": NODE_CLASS_MAPPINGS["FileExistsNode"],
+    "检查文件": NODE_CLASS_MAPPINGS["FileExistsNode"],
 })
 
 # 同步更新显示名称
@@ -95,6 +102,8 @@ for key in NODE_CLASS_MAPPINGS:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "网格化遮罩"
         elif key in ["NumberPadding", "PadNumber", "ZeroPadding", "补零"]:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "数字补零"
+        elif key in ["FileExists", "CheckFileExists", "IsFileExists", "文件存在", "检查文件"]:
+            NODE_DISPLAY_NAME_MAPPINGS[key] = "文件存在检查"
         else:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件去重"
 
