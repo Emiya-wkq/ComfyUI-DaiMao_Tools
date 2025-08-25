@@ -12,6 +12,8 @@ from .mask import NODE_CLASS_MAPPINGS as MASK_NODE_MAPPINGS
 from .mask import NODE_DISPLAY_NAME_MAPPINGS as MASK_DISPLAY_MAPPINGS
 from .math import NODE_CLASS_MAPPINGS as MATH_NODE_MAPPINGS
 from .math import NODE_DISPLAY_NAME_MAPPINGS as MATH_DISPLAY_MAPPINGS
+from .load import NODE_CLASS_MAPPINGS as LOAD_NODE_MAPPINGS
+from .load import NODE_DISPLAY_NAME_MAPPINGS as LOAD_DISPLAY_MAPPINGS
 
 # 合并节点映射
 NODE_CLASS_MAPPINGS = {}
@@ -21,6 +23,7 @@ NODE_CLASS_MAPPINGS.update(DEDUP_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(WATERMARK_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(MASK_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update(MATH_NODE_MAPPINGS)
+NODE_CLASS_MAPPINGS.update(LOAD_NODE_MAPPINGS)
 NODE_CLASS_MAPPINGS.update({
     "anime_name_helper": AnimeNameHelper,
     "呆毛文件去重器(带符号链接)": DaiMaoFileDeduplicatorWithSymlink,
@@ -34,6 +37,7 @@ NODE_DISPLAY_NAME_MAPPINGS.update(DEDUP_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(WATERMARK_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(MASK_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update(MATH_DISPLAY_MAPPINGS)
+NODE_DISPLAY_NAME_MAPPINGS.update(LOAD_DISPLAY_MAPPINGS)
 NODE_DISPLAY_NAME_MAPPINGS.update({
     "anime_name_helper": "呆毛动漫人物名称辅助器",
     "呆毛文件去重器(带符号链接)": "呆毛文件去重器(带符号链接)",
@@ -83,6 +87,22 @@ NODE_CLASS_MAPPINGS.update({
     "IsFileExists": NODE_CLASS_MAPPINGS["FileExistsNode"],
     "文件存在": NODE_CLASS_MAPPINGS["FileExistsNode"],
     "检查文件": NODE_CLASS_MAPPINGS["FileExistsNode"],
+    
+    # 批量加载图片节点别名
+    "BatchLoadImages": NODE_CLASS_MAPPINGS["BatchLoadImagesNode"],
+    "LoadImagesFromDir": NODE_CLASS_MAPPINGS["BatchLoadImagesNode"],
+    "DirectoryImageLoader": NODE_CLASS_MAPPINGS["BatchLoadImagesNode"],
+    "批量加载": NODE_CLASS_MAPPINGS["BatchLoadImagesNode"],
+    "目录图片": NODE_CLASS_MAPPINGS["BatchLoadImagesNode"],
+    "加载目录": NODE_CLASS_MAPPINGS["BatchLoadImagesNode"],
+    
+    # 批量储存图片节点别名
+    "BatchSaveImages": NODE_CLASS_MAPPINGS["BatchSaveImagesNode"],
+    "SaveImagesToDir": NODE_CLASS_MAPPINGS["BatchSaveImagesNode"],
+    "ImageSaver": NODE_CLASS_MAPPINGS["BatchSaveImagesNode"],
+    "批量保存": NODE_CLASS_MAPPINGS["BatchSaveImagesNode"],
+    "保存图片": NODE_CLASS_MAPPINGS["BatchSaveImagesNode"],
+    "图片保存": NODE_CLASS_MAPPINGS["BatchSaveImagesNode"],
 })
 
 # 同步更新显示名称
@@ -104,6 +124,10 @@ for key in NODE_CLASS_MAPPINGS:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "数字补零"
         elif key in ["FileExists", "CheckFileExists", "IsFileExists", "文件存在", "检查文件"]:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "文件存在检查"
+        elif key in ["BatchLoadImages", "LoadImagesFromDir", "DirectoryImageLoader", "批量加载", "目录图片", "加载目录"]:
+            NODE_DISPLAY_NAME_MAPPINGS[key] = "批量加载图片"
+        elif key in ["BatchSaveImages", "SaveImagesToDir", "ImageSaver", "批量保存", "保存图片", "图片保存"]:
+            NODE_DISPLAY_NAME_MAPPINGS[key] = "批量储存图片"
         else:
             NODE_DISPLAY_NAME_MAPPINGS[key] = "呆毛文件去重"
 
